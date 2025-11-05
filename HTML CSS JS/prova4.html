@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<script>
+let text = '{ "impiegati" : [' +
+'{ "nome":"John" , "cognome":"Doe" },' +
+'{ "nome":"Anna" , "cognome":"Smith" },' +
+'{ "nome":"Peter" , "cognome":"Jones" } ]}';
+
+const obj = JSON.parse(text);
+const html="";
+function caricaLista(){
+  html = "<!DOCTYPE html><html><head> </head> <body> <table border='1'>"
+  for (let x in obj) {
+    html += "<tr><td>" + obj[x].nome + "</td></tr>";
+  }
+ html += "</table> </body> </html>"
+ return html;
+}
+
+</script>
+<body>
+    <button type="button" onclick="caricaLista()"> Carica Lista </button>
+
+
+
+</body>
+
+
+
+</html>

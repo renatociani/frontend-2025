@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giorgia Scomparin - Social Media Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="animated-bg"></div>
+    <div class="grid-overlay"></div>
+
+    <nav>
+        <div class="logo">GS</div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">Chi Sono</a></li>
+            <li><a href="#projects">Progetti</a></li>
+            <li><a href="#contact">Contatti</a></li>
+        </ul>
+        <div class="burger" id="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <main>
+        <section id="home">
+            <div class="home-content">
+                <h1>GIORGIA<br>SCOMPARIN</h1>
+                <p class="subtitle">Social Media Manager</p>
+                <a href="#about" class="cta-button">Scopri di più</a>
+            </div>
+            <div class="deco-circle deco-1"></div>
+            <div class="deco-circle deco-2"></div>
+        </section>
+
+        <section id="about">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Chi Sono</h2>
+                    <p>Ciao! Sono Giorgia Scomparin, social media manager appassionata di estetica vaporwave e design contemporaneo.</p>
+                    <p>Creo strategie digitali che combinano creatività e dati, trasformando i brand in esperienze visive memorabili. Il mio approccio unisce l'estetica accattivante della cultura digitale con strategie di marketing efficaci.</p>
+                    <p>Specializzata in contenuti visual, gestione community e campagne creative che lasciano il segno.</p>
+                </div>
+                <div class="about-image">
+                    <!-- Placeholder per foto profilo -->
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="projects-content">
+                <h2>I Miei Progetti</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <h3>Brand Identity</h3>
+                        <p>Sviluppo completo dell'identità visiva e strategia social per brand emergenti nel settore lifestyle.</p>
+                        <span class="project-tag">Instagram</span>
+                        <span class="project-tag">Branding</span>
+                    </div>
+                    <div class="project-card">
+                        <h3>Content Strategy</h3>
+                        <p>Creazione di calendari editoriali e contenuti visual per aumentare l'engagement del 300%.</p>
+                        <span class="project-tag">Content</span>
+                        <span class="project-tag">Strategy</span>
+                    </div>
+                    <div class="project-card">
+                        <h3>Community Growth</h3>
+                        <p>Gestione community e campagne di crescita organica su multiple piattaforme social.</p>
+                        <span class="project-tag">Community</span>
+                        <span class="project-tag">Growth</span>
+                    </div>
+                    <div class="project-card">
+                        <h3>Visual Campaigns</h3>
+                        <p>Design e implementazione di campagne visual vaporwave per fashion brand.</p>
+                        <span class="project-tag">Design</span>
+                        <span class="project-tag">Campaign</span>
+                    </div>
+                    <div class="project-card">
+                        <h3>Influencer Marketing</h3>
+                        <p>Coordinamento campagne con micro e macro influencer per massimizzare la reach.</p>
+                        <span class="project-tag">Influencer</span>
+                        <span class="project-tag">Marketing</span>
+                    </div>
+                    <div class="project-card">
+                        <h3>Analytics & Reports</h3>
+                        <p>Analisi dati e reportistica dettagliata per ottimizzare le performance social.</p>
+                        <span class="project-tag">Analytics</span>
+                        <span class="project-tag">Data</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="contact-content">
+                <h2>Contattami</h2>
+                <p>Hai un progetto in mente? Parliamone!</p>
+                
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Nome</label>
+                        <input type="text" id="name" name="name" placeholder="Il tuo nome" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="tua@email.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Oggetto</label>
+                        <input type="text" id="subject" name="subject" placeholder="Di cosa vuoi parlare?" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Messaggio</label>
+                        <textarea id="message" name="message" placeholder="Raccontami del tuo progetto..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-button">Invia Messaggio</button>
+                    
+                    <div class="success-message" id="successMessage">
+                        ✨ Messaggio inviato con successo! Ti risponderò al più presto.
+                    </div>
+                </form>
+
+                <div class="social-links">
+                    <a href="https://instagram.com" target="_blank" class="social-link">
+                        <span>📷</span> Instagram
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" class="social-link">
+                        <span>💼</span> LinkedIn
+                    </a>
+                    <a href="https://twitter.com" target="_blank" class="social-link">
+                        <span>🐦</span> Twitter
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

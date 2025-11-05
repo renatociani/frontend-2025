@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+</head>
+<body>
+
+
+    <script>
+        let requestURL = './classe.json';
+        //setta tipo di richiesta
+        let request = new XMLHttpRequest();
+        request.open('GET', requestURL)
+        //setta tipo di risposta
+        request.responseType = 'json'
+        request.send();
+
+        // sull ' evento onload, cioè quando viene caricata la richiesta mi faiquesta funziona, mi crei la constante classe, che è la risposta della richiesta
+        request.onload = function(){
+          const classe = request.response;
+          console.log(classe.insegnanti[1].cognome)
+
+        }
+    </script>
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

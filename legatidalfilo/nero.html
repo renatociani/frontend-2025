@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LegatiDalFilo - Collezione Nera</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+    <!-- Filo rosso diagonale principale -->
+    <div class="red-thread-diagonal"></div>
+    <div class="red-thread-diagonal red-thread-secondary"></div>
+    <div class="red-thread-wavy"></div>
+
+    <header>
+        <nav>
+            <div class="logo">LegatiDalFilo</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="la_nostra_collezione.html">Collezione</a></li>
+                <li><a href="chi_siamo.html">Chi Siamo</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="products product-detail-page" id="products">
+        <div class="breadcrumb">
+            <a href="la_nostra_collezione.html">← Torna alla collezione</a>
+        </div>
+        
+        <h2 class="section-title animate__animated animate__fadeInDown">
+            Collezione Nera
+            <span class="color-badge" style="background: linear-gradient(135deg, #1a1a1a, #000000);"></span>
+        </h2>
+
+        <div class="product-grid" id="nero-products">
+            <!-- Le magliette verranno caricate dinamicamente da JavaScript -->
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="logo">LegatiDalFilo</div>
+            <div class="social-links">
+                <a href="https://www.instagram.com/legatidalfilo/">📷</a>
+            </div>
+            <p class="footer-text">© 2025 LegatiDalFilo - Non è solo una t-shirt. È un messaggio, a colori.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="nero_loader.js"></script>
+</body>
+</html>

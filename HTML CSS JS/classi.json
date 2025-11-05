@@ -1,0 +1,102 @@
+[
+    {
+    "nome" : "4A",
+    "scuola" : "Scuola Elementare Miao",
+    "insegnanti" : [
+        {   
+            "nome" : "Demetrio",
+            "cognome" : "Rumano",
+            "materieInsegnate": [
+                "storia", "geografia"
+            ]
+        },
+        {   
+            "nome" : "Loredana",
+            "cognome" : "Nera",
+            "materieInsegnate": [
+                "matematica", "scienze"
+            ]
+        },
+        {   
+            "nome" : "Alfredo",
+            "cognome" : "Cinti",
+            "materieInsegnate": [
+                "religione", "italiano"
+            ]
+        }
+    ],
+    "alunni" : [
+        {   
+            "nome" : "Mattia",
+            "cognome" : "Nera",
+            "materiePreferite": [
+                "storia", "geografia"
+            ]
+        },
+        {   
+            "nome" : "Renato",
+            "cognome" : "Ciani",
+            "materieInsegnate": [
+                "matematica", "italiano"
+            ]
+        }
+    
+    ],
+    "orari":{
+        "mattina": ["italiano, geografia"],
+        "pomeriggio": ["matematica", "religione"]
+    }
+    
+    },
+    {
+        "nome" : "5A",
+        "scuola" : "Scuola Elementare De Amicis",
+        "insegnanti" : [
+            {   
+                "nome" : "Giulio",
+                "cognome" : "Pagano",
+                "materieInsegnate": [
+                    "storia", "geografia"
+                ]
+            },
+            {   
+                "nome" : "Laura",
+                "cognome" : "Ciani",
+                "materieInsegnate": [
+                    "matematica", "scienze"
+                ]
+            },
+            {   
+                "nome" : "Germano",
+                "cognome" : "Mosconi",
+                "materieInsegnate": [
+                    "religione", "italiano"
+                ]
+            }
+        ],
+        "alunni" : [
+            {   
+                "nome" : "Paolo",
+                "cognome" : "Carisi",
+                "materiePreferite": [
+                    "storia", "geografia"
+                ]
+            },
+            {   
+                "nome" : "Luca",
+                "cognome" : "Capogna",
+                "materieInsegnate": [
+                    "matematica", "italiano"
+                ]
+            }
+        
+        ],
+        "orari":{
+            "mattina": ["italiano, geografia"],
+            "pomeriggio": ["matematica", "religione"]
+        }
+        
+        }
+    
+    
+]

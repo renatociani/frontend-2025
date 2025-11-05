@@ -1,0 +1,14 @@
+{
+  "colore": "nero",
+  "descrizione": "Sta bene su tutto. Anche sulla tua faccia tosta.",
+  "frasi": [
+    "Il nostro amore e' come la dieta... Ogni giorno ci riprovo",
+    "L'uomo dei tuoi sogni esiste... Devi solo dormire di piu'",
+    "Spero che duri a letto tanto quanto ci metti a rispondermi",
+    "Lui : Io cerco la pace Lei: io cerco la pace dopo la tempesta",
+    "Lui : Io volevo solo pace... Lei: Io volevo solo vincere!",
+    "La testa si deve perdere in due, altrimenti è... Un' esecuzione"
+  ],
+  "prezzo": "36,00",
+  "gradiente": "linear-gradient(135deg, rgba(26, 26, 26, 0.7), rgba(0, 0, 0, 0.7))"
+}

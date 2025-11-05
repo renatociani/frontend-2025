@@ -1,0 +1,49 @@
+{
+"nome" : "4A",
+"scuola" : "Scuola Elementare Miao",
+"insegnanti" : [
+    {   
+        "nome" : "Demetrio",
+        "cognome" : "Rumano",
+        "materieInsegnate": [
+            "storia", "geografia"
+        ]
+    },
+    {   
+        "nome" : "Loredana",
+        "cognome" : "Nera",
+        "materieInsegnate": [
+            "matematica", "scienze"
+        ]
+    },
+    {   
+        "nome" : "Alfredo",
+        "cognome" : "Cinti",
+        "materieInsegnate": [
+            "religione", "italiano"
+        ]
+    }
+],
+"alunni" : [
+    {   
+        "nome" : "Mattia",
+        "cognome" : "Nera",
+        "materiePreferite": [
+            "storia", "geografia"
+        ]
+    },
+    {   
+        "nome" : "Renato",
+        "cognome" : "Ciani",
+        "materieInsegnate": [
+            "matematica", "italiano"
+        ]
+    }
+
+],
+"orari":{
+    "mattina": ["italiano, geografia"],
+    "pomeriggio": ["matematica", "religione"]
+}
+
+}

@@ -1,0 +1,110 @@
+* {
+
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Courier New', Courier,  monospace; /*personalizzo il font, se non lo metto prende quello di default*/
+
+}
+
+/*rettangolo che voglio che prende piu o meno tutta la pagina*/
+.container {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    border: 10px solid yellow; 
+    
+
+}
+
+
+/*card container è il rettangolo a forma di carta dentro la cornice grande  principale, contiene add task e l'input  */
+.card-container {
+    border: 3px solid green; /*il colore e lo spessore del bordo dei margini*/
+    width: 90%;
+    height: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5); /*il colore dell'ombra che si posa sul bordo dei margini*/
+    border-radius: 10px 1px 10px 1px; /*bordi arrotondati e non spigolosi dove voglio, se metti 1px quell'angolo sarà spigoloso,
+    in ordine sono : angolo superiore sinistro;
+angolo superiore destro;
+angolo inferiore sinistro;
+angolo inferiore destro;*/
+    
+}
+
+/*il rettangolo che contiene DIRETTAMENTE add task e l'input container */
+.input-container {
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  border-radius: 10px 10px 10px 10px; /*bordi arrotondati e non spigolosi*/
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+  border: 5px solid grey; 
+  
+
+}
+
+
+/* ilo rettangolo dove dentro scrivo le cose */
+.input-container input {
+    border: 0;
+    outline: 0;
+    border: 2px solid yellow;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+    margin-top: 20px;
+    margin-bottom: 10px;
+    width: 90%;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 10px 10px 10px 10px; /*bordi arrotondati e non spigolosi*/
+  
+  }
+
+  /* il bottone "Aggiungi" ilo rettangolo dove dentro scrivo le cose */
+.input-container button {
+  width: 50%;
+  height: 50px;
+  background-color: green;
+  font-size: 16px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+  border-radius: 10px 10px 10px 10px; 
+
+
+}
+
+
+/*il container dove vanno ad aggiungersi i tasks*/
+.task-container {
+
+display: flex;
+width: 100%;
+justify-content: center;
+margin-top: 50px;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+background-color: brown;
+border-radius: 10px 10px 10px 10px; 
+flex-direction: column;
+align-items: center;
+
+}
+
+#lista-task {
+  width: 90%;
+  padding: 10px;
+
+}
+
+#lista-task li {
+display: flex;
+align-items: center;
+justify-content: space-between;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5); 
+border-radius: 5px 5px 5px 5px; /*bordi arrotondati e non spigolosi*/
+border: 2px solid yellow;
+background-color: white;
+margin-top: 20px;
+}

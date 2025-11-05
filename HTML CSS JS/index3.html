@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        input{
+            display: block;
+            margin-bottom: 20px;
+        }
+
+    </style>
+  
+</head>
+<body>
+
+<form>
+    <div>
+        <label for="nome">Nome: </label>
+        <input id="nome" type="text">
+    </div>
+    <div>
+        <label for="cognome">Cognome: </label>
+        <input id="cognome" type="text">
+    </div>
+    <div>
+      <input id="submit" type="submit">
+
+    </div>
+
+</form>
+<p>   </p>
+
+
+<script>
+const form = document.querySelector('form')
+const nome = document.getElementById('nome')
+const cognome = document.getElementById('cognome')
+const paragrafo = document.querySelector('p')
+
+form.onsubmit = function(e) {
+    if(nome.value=== '' || cognome.value===''){
+       e.preventDefault();
+       paragrafo.textContent = 'Compila i campi'
+
+    }
+}
+
+</script>
+</body>
+
+</html>
+
+
+
+</html>
