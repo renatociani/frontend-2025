@@ -69,6 +69,41 @@ body {
     position: relative;
 }
 
+/* Profile Circle */
+.profile-circle {
+    position: absolute;
+    top: 120px;
+    right: 10%;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #ffffff;
+    box-shadow: 0 10px 40px rgba(21, 101, 192, 0.3);
+    animation: float 3s ease-in-out infinite;
+    background: linear-gradient(135deg, #90caf9, #1565c0);
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.profile-circle:hover .profile-image {
+    transform: scale(1.1);
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
 .hero-content h1 {
     font-size: clamp(2.5rem, 6vw, 4.5rem);
     font-weight: 200;
@@ -179,6 +214,55 @@ section {
     line-height: 1.8;
 }
 
+/* Image Divider Section */
+.image-divider {
+    padding: 4rem 5%;
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rectangle-container {
+    width: 100%;
+    max-width: 800px;
+    height: 400px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 50px rgba(21, 101, 192, 0.2);
+    border: 3px solid #e3f2fd;
+    background: linear-gradient(135deg, #90caf9, #1565c0);
+    animation: slideIn 1s ease-out;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.rectangle-container:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 60px rgba(21, 101, 192, 0.3);
+}
+
+.rectangle-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.rectangle-container:hover .rectangle-image {
+    transform: scale(1.05);
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* About Section */
 .about-section {
     background: linear-gradient(180deg, #ffffff 0%, #e3f2fd 100%);
@@ -264,6 +348,15 @@ footer {
         padding: 8rem 5% 4rem;
     }
 
+    .profile-circle {
+        position: relative;
+        top: 0;
+        right: 0;
+        margin: 0 auto 2rem;
+        width: 150px;
+        height: 150px;
+    }
+
     section {
         padding: 4rem 5%;
     }
@@ -276,4 +369,320 @@ footer {
         flex-direction: column;
         gap: 2rem;
     }
+
+    .rectangle-container {
+        height: 250px;
+        border-radius: 15px;
+    }
+
+    .image-divider {
+        padding: 3rem 5%;
+    }
+
+    /* Aggiungi queste regole alla fine del file style.css esistente */
+
+/* ===== OTTIMIZZAZIONI MOBILE ===== */
+
+/* Per schermi piccoli (iPhone, dispositivi mobili) */
+@media (max-width: 768px) {
+    /* Navigation mobile migliorata */
+    .nav {
+        padding: 1rem 5%;
+    }
+    
+    .logo {
+        font-size: 1.2rem;
+        letter-spacing: 1px;
+    }
+    
+    .nav-links {
+        gap: 1.5rem;
+        font-size: 0.9rem;
+    }
+    
+    /* Hero section ottimizzata */
+    .hero {
+        height: 90vh;
+        padding: 6rem 5% 4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .hero-content h1 {
+        font-size: clamp(2rem, 8vw, 3rem);
+        line-height: 1.2;
+        margin-bottom: 0.8rem;
+        letter-spacing: -0.5px;
+    }
+    
+    .hero-content .subtitle {
+        font-size: clamp(1rem, 4vw, 1.4rem);
+        margin-bottom: 2.5rem;
+        line-height: 1.4;
+        padding: 0 1rem;
+    }
+    
+    .cta-button {
+        padding: 0.9rem 2rem;
+        font-size: 0.95rem;
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    
+    .scroll-indicator {
+        font-size: 1.5rem;
+        bottom: 1.5rem;
+    }
+    
+    /* Section generali */
+    section {
+        padding: 4rem 5%;
+        width: 100%;
+    }
+    
+    .section-title {
+        font-size: clamp(1.8rem, 6vw, 2.5rem);
+        margin-bottom: 2.5rem;
+        padding: 0 1rem;
+        line-height: 1.3;
+    }
+    
+    /* Services section mobile */
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin-top: 2rem;
+        padding: 0 0.5rem;
+    }
+    
+    .service-card {
+        padding: 2rem 1.5rem;
+        margin: 0 auto;
+        width: 100%;
+        border-radius: 15px;
+    }
+    
+    .service-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1.2rem;
+    }
+    
+    .service-card h3 {
+        font-size: 1.3rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .service-card p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+    
+    /* About section mobile */
+    .about-section {
+        padding: 4rem 5%;
+    }
+    
+    .about-content p {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        padding: 0 0.5rem;
+        text-align: justify;
+        hyphens: auto;
+    }
+    
+    /* Contact section mobile */
+    .contact-section {
+        padding: 4rem 5%;
+    }
+    
+    .contact-subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+        padding: 0 1rem;
+        line-height: 1.5;
+    }
+    
+    .contact-info {
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: center;
+    }
+    
+    .contact-item {
+        padding: 1rem;
+        background: rgba(227, 242, 253, 0.3);
+        border-radius: 12px;
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .contact-item span:first-child {
+        font-size: 1.8rem;
+    }
+    
+    .contact-item a {
+        font-size: 1rem;
+        word-break: break-all;
+        text-align: center;
+        padding: 0 0.5rem;
+    }
+    
+    /* Footer mobile */
+    footer {
+        padding: 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Per schermi molto piccoli (iPhone SE e simili) */
+@media (max-width: 375px) {
+    .hero {
+        height: 85vh;
+        padding: 5rem 4% 3rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero-content .subtitle {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .cta-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+    
+    section {
+        padding: 3rem 4%;
+    }
+    
+    .section-title {
+        font-size: 1.6rem;
+    }
+    
+    .service-card {
+        padding: 1.5rem;
+    }
+    
+    .about-content p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+    
+    .contact-item {
+        max-width: 100%;
+    }
+}
+
+/* Per schermi in orizzontale (landscape) su mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+    .hero {
+        height: auto;
+        min-height: 100vh;
+        padding: 8rem 5% 4rem;
+    }
+    
+    .hero-content h1 {
+        font-size: clamp(1.8rem, 5vw, 2.5rem);
+    }
+    
+    .hero-content .subtitle {
+        font-size: clamp(0.9rem, 3vw, 1.2rem);
+        margin-bottom: 2rem;
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Miglioramenti generali per mobile */
+@media (max-width: 768px) {
+    /* Previene zoom automatico su input in iOS */
+    input, textarea, select {
+        font-size: 16px !important;
+    }
+    
+    /* Migliora la leggibilità */
+    body {
+        line-height: 1.5;
+        -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+    }
+    
+    /* Assicura che i link siano facilmente cliccabili */
+    a, button {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    /* Migliora il touch feedback */
+    .cta-button, 
+    .service-card,
+    .contact-item {
+        transition: transform 0.2s, background 0.2s;
+    }
+    
+    .cta-button:active, 
+    .service-card:active,
+    .contact-item:active {
+        transform: scale(0.98);
+    }
+    
+    /* Nascondi l'indicatore di scroll dopo un po' di scroll */
+    .scroll-indicator {
+        transition: opacity 0.3s;
+    }
+}
+
+/* Smooth scrolling migliorato per mobile */
+@media (max-width: 768px) {
+    html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 80px; /* Compensa l'altezza della navbar fissa */
+    }
+}
+
+/* Navbar mobile fix per iOS */
+@supports (-webkit-touch-callout: none) {
+    .nav {
+        padding-top: env(safe-area-inset-top);
+        padding-top: constant(safe-area-inset-top);
+    }
+    
+    .hero {
+        padding-top: calc(80px + env(safe-area-inset-top));
+        padding-top: calc(80px + constant(safe-area-inset-top));
+    }
+}
+
+/* Performance migliorata per animazioni su mobile */
+@media (max-width: 768px) {
+    .service-card {
+        will-change: transform;
+        backface-visibility: hidden;
+        -webkit-font-smoothing: subpixel-antialiased;
+    }
+}
+
+/* Aggiungi un hamburger menu per mobile se vuoi renderlo più compatto */
+@media (max-width: 768px) {
+    /* Puoi aggiungere un menu hamburger qui se serve */
+    /* Per ora lascio il menu orizzontale che funziona bene */
+    
+    .nav-links {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 0.5rem;
+    }
+    
+    .nav-links::-webkit-scrollbar {
+        display: none;
+    }
+} 
 }

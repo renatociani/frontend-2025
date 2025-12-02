@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contatti - Sara Alfano</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="contact-form.css">
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-content">
+            <div class="logo">SARA ALFANO</div>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#servizi">Servizi</a></li>
+                <li><a href="index.html#chi-sono">Chi Sono</a></li>
+                <li><a href="index.html#contatti">Contatti</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="contact-form-section">
+        <div class="form-container">
+            <div class="form-header">
+                <h1>Inviami un Messaggio</h1>
+                <p>Compila il form qui sotto e ti risponderò il prima possibile</p>
+            </div>
+
+            <form id="contactForm" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Nome e Cognome *</label>
+                    <input type="text" id="name" name="name" required placeholder="Mario Rossi">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required placeholder="mario.rossi@email.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Telefono</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+39 333 123 4567">
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Servizio *</label>
+                    <select id="subject" name="subject" required>
+                        <option value="">Seleziona un servizio</option>
+                        <option value="osteopatia">Osteopatia</option>
+                        <option value="massoterapia">Massoterapia</option>
+                        <option value="pilates">Pilates</option>
+                        <option value="altro">Informazioni generali</option>
+                    </select>
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="message">Messaggio *</label>
+                    <textarea id="message" name="message" rows="6" required placeholder="Scrivi qui il tuo messaggio..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-button">
+                    Invia Messaggio
+                </button>
+
+                <div id="formMessage" class="form-message"></div>
+            </form>
+
+            <div class="contact-info-sidebar">
+                <div class="info-item">
+                    <span class="info-icon">📧</span>
+                    <div>
+                        <strong>Email</strong>
+                        <p>armoniadeisensi.sara@gmail.com</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <span class="info-icon">📱</span>
+                    <div>
+                        <strong>Telefono</strong>
+                        <p>+39 333 123 4567</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <span class="info-icon">📍</span>
+                    <div>
+                        <strong>Sede</strong>
+                        <p>Milano, Italia</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Sara Alfano - Osteopata · Tutti i diritti riservati</p>
+    </footer>
+
+    <script src="contact-form.js"></script>
+</body>
+</html>
