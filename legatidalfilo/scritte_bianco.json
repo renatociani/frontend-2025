@@ -1,0 +1,14 @@
+{
+  "colore": "bianco",
+  "descrizione": "Semplice, pulito, ma mai noioso.",
+  "frasi": [
+    "Siamo la coppia perfetta, io parlo e tu sopporti",
+    "Sei più instabile del wii fi in spiaggia ma... ti cerco lo stesso",
+    "Era tutto un film romantico...poi si è seduto sul telecomando",
+    "Lui ha sempre l'ultima parola...dopo che ha finito di parlare lei",
+    "Lei dice che non la capisco e lui...continua a darle ragione (per paura)",
+    "Troppe cose fanno male...tranne me"
+  ],
+  "prezzo": "32,00",
+  "gradiente": "linear-gradient(135deg, rgba(255, 255, 255, 0.7), rgba(224, 224, 224, 0.7))"
+}

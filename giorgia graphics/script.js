@@ -44,36 +44,16 @@ document.querySelectorAll('.project-card').forEach(card => {
     observer.observe(card);
 });
 
-// Contact form handling
+// Contact form handling con FormSubmit
 const contactForm = document.getElementById('contactForm');
 const successMessage = document.getElementById('successMessage');
 
 contactForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    // Get form data
-    const formData = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        subject: document.getElementById('subject').value,
-        message: document.getElementById('message').value
-    };
-
-    // Create mailto link
-    const mailtoLink = `mailto:giorgia.scomparin@email.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
-        `Nome: ${formData.name}\nEmail: ${formData.email}\n\nMessaggio:\n${formData.message}`
-    )}`;
-
-    // Open mail client
-    window.location.href = mailtoLink;
-
-    // Show success message
+    // Il form viene inviato normalmente tramite FormSubmit
+    // Mostra il messaggio di successo dopo l'invio
     successMessage.style.display = 'block';
     
-    // Reset form
-    contactForm.reset();
-
-    // Hide success message after 5 seconds
+    // Nascondi il messaggio dopo 5 secondi
     setTimeout(() => {
         successMessage.style.display = 'none';
     }, 5000);

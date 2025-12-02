@@ -28,6 +28,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // ===== NAVIGAZIONE ALLE PAGINE COLORE =====
+// ===== NAVIGAZIONE ALLE PAGINE COLORE =====
 document.addEventListener('DOMContentLoaded', () => {
     const productCards = document.querySelectorAll('.product-card');
     
@@ -40,17 +41,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Animazione click
                 card.style.transform = 'scale(0.98)';
                 
+                // Mappa dei colori alle pagine
+                const colorPages = {
+                    'rosa': 'rosa.html',
+                    'nero': 'nero.html',
+                    'bianco': 'bianco.html',
+                    'bordeaux': 'bordeaux.html',
+                    'grigio': 'grigio.html',
+                    'verde': 'verde.html'
+                };
+                
                 // Naviga alla pagina del colore
-                if (color === 'rosa') {
+                if (colorPages[color]) {
                     setTimeout(() => {
-                        window.location.href = 'rosa.html';
-                    }, 200);
-                } else if (color === 'nero') {
-                    setTimeout(() => {
-                        window.location.href = 'nero.html';
+                        window.location.href = colorPages[color];
                     }, 200);
                 } else {
-                    console.log(`Pagina per ${color} non ancora disponibile`);
+                    console.log(`Pagina per ${color} non trovata`);
                 }
             });
         }

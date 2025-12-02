@@ -1,0 +1,14 @@
+{
+  "colore": "grigio",
+  "descrizione": "Neutro? Solo per chi non ti conosce.",
+  "frasi": [
+    "L'amore è l'unica guerra in cui dormi con il nemico",
+    "Tra l'amore senza sesso e il sesso senza amore,ho scelto internet senza limiti",
+    "Dice che parlo poco... tanto le cose migliori non si dicono",
+    "Lei è sempre in ritardo...la perfezione richiede tempo (caro)",
+    "L'amore è lo scherzo più vecchio del mondo eppure...ci cascano tutti",
+    "La tua maglietta addosso a me. Fine del gioco"
+  ],
+  "prezzo": "32,00",
+  "gradiente": "linear-gradient(135deg, rgba(74, 74, 74, 0.7), rgba(42, 42, 42, 0.7))"
+}

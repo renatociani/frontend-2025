@@ -1,0 +1,14 @@
+{
+  "colore": "verde",
+  "descrizione": "Fresco, deciso e un po' fuori dal coro.",
+  "frasi": [
+    "Secondo le previsioni del tempo dovresti essere nel mio letto",
+    "(Chi)amami quando puoi",
+    "Tu cucini... io (ti) assaggio",
+    "Lui porta la pazienza... lei il motivo per perderla",
+    "Non puoi dire ad un uomo 'cerca di capire' una cosa alla volta, o cerca o capisce",
+    "Lei comanda e lui... si illude di vincere"
+  ],
+  "prezzo": "32,00",
+  "gradiente": "linear-gradient(135deg, rgba(50, 205, 50, 0.7), rgba(34, 139, 34, 0.7))"
+}

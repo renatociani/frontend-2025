@@ -550,22 +550,13 @@ footer {
     padding-top: 8rem;
 }
 
+/* ===== BREADCRUMB CON FRECCIA ===== */
 .breadcrumb {
     max-width: 1400px;
     margin: 0 auto 2rem;
     padding: 0 5%;
 }
 
-.breadcrumb a {
-    color: #aaa;
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: color 0.3s;
-}
-
-.breadcrumb a:hover {
-    color: #dc2626;
-}
 
 .collection-subtitle {
     text-align: center;
@@ -632,4 +623,8 @@ footer {
     align-items: center;
     justify-content: center;
 }
+
+
+
+
 }

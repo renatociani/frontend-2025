@@ -1,24 +1,18 @@
-<!--index.html-->
+<!--bordeaux.html-->
 <!DOCTYPE html>
 <html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LegatiDalFilo - Magliette che Parlano al Cuore</title>
+    <title>LegatiDalFilo - Collezione Bordeaux</title>
     <link rel="stylesheet" href="style.css">
-     <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-  />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 </head>
 <body>
     <!-- Filo rosso diagonale principale -->
     <div class="red-thread-diagonal"></div>
-    
-    <!-- Filo rosso diagonale secondario -->
     <div class="red-thread-diagonal red-thread-secondary"></div>
-    
-    <!-- Filo rosso ondulato orizzontale -->
     <div class="red-thread-wavy"></div>
 
     <header>
@@ -32,11 +26,16 @@
         </nav>
     </header>
 
-    <section class="hero" id="home">
-        <div class="hero-content animate__animated animate__bounce">
-            <h1>LegatiDalFilo</h1>
-            <p>Dove il romanticismo incontra l'ironia. Magliette che dicono tutto, senza dire nulla.</p>
-            <a href="la_nostra_collezione.html" class="cta-button">Scopri la Collezione</a>
+    <section class="products product-detail-page" id="products">
+        
+        
+        <h2 class="section-title animate__animated animate__fadeInDown">
+            Collezione Bordeaux
+            <span class="color-badge" style="background: linear-gradient(135deg, #8b0000, #5a0000);"></span>
+        </h2>
+
+        <div class="product-grid" id="bordeaux-products">
+            <!-- Le magliette verranno caricate dinamicamente da JavaScript -->
         </div>
     </section>
 
@@ -48,10 +47,11 @@
    <img src="instagram.svg" alt="Icona instagram" width="200" height="200">
                 </a>
             </div>
-            <p class="footer-text">© 2025 LegatiDalFilo - Non e' solo una t-shirt. E' un messaggio, a colori.</p>
+            <p class="footer-text">© 2025 LegatiDalFilo - Non è solo una t-shirt. È un messaggio, a colori.</p>
         </div>
     </footer>
 
     <script src="script.js"></script>
+    <script src="bordeaux_loader.js"></script>
 </body>
 </html>

@@ -213,10 +213,11 @@ section {
 /* About Section */
 .about-content {
     max-width: 1200px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
     align-items: center;
+    text-align: center;
 }
 
 .about-text h2 {
@@ -235,8 +236,8 @@ section {
 
 .about-image {
     position: relative;
-    width: 100%;
-    aspect-ratio: 1;
+    width: 500px;
+    height: 500px;
     border-radius: 50%;
     border: 5px solid rgba(255,255,255,0.5);
     overflow: hidden;
@@ -244,6 +245,17 @@ section {
         0 0 60px rgba(255,20,147,0.6),
         inset 0 0 60px rgba(185,103,255,0.3);
     animation: pulse 3s infinite;
+    margin: 30px auto;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.about-image img {
+    width: 100%;
+    height: 200%;
+    object-fit: cover;
+    object-position: center;
 }
 
 @keyframes pulse {
@@ -501,7 +513,7 @@ section {
     height: 200px;
     top: 20%;
     left: 10%;
-    animation: rotate 20s linear infinite;
+    animation: rotate 30s linear infinite;
 }
 
 .deco-2 {
@@ -546,6 +558,11 @@ section {
 
     .about-content {
         grid-template-columns: 1fr;
+    }
+
+    .about-image {
+        width: 300px;
+        height: 300px;
     }
 
     section {

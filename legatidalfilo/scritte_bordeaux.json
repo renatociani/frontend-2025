@@ -1,0 +1,14 @@
+{
+  "colore": "bordeaux",
+  "descrizione": "Elegante, passionale e pericolosamente sexy.",
+  "frasi": [
+    "L'amore è condividere tutto, tranne le patatine",
+    "L'amore vero resiste a tutto, anche a 90°... in lavatrice",
+    "Netflix acceso, e noi in modalita' 'stai ancora guardando?'",
+    "Lei è complicata e tu sei semplice da prendere in giro",
+    "Lei parla troppo...beh qualcuno deve far funzionare questa relazione",
+    "Se l'amore è un viaggio, tu sei la mia autostrada a pagamento"
+  ],
+  "prezzo": "32,00",
+  "gradiente": "linear-gradient(135deg, rgba(139, 0, 0, 0.7), rgba(90, 0, 0, 0.7))"
+}
