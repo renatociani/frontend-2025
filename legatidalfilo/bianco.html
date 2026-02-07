@@ -1,30 +1,13 @@
 <!--bianco.html-->
 <!DOCTYPE html>
 <html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LegatiDalFilo - Collezione Bianca</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-</head>
+<!-- Head incluso automaticamente -->
+    <div data-include="/html/head.html"></div>
 <body>
     <!-- Filo rosso diagonale principale -->
-    <div class="red-thread-diagonal"></div>
-    <div class="red-thread-diagonal red-thread-secondary"></div>
-    <div class="red-thread-wavy"></div>
+    <div data-include="/html/filo_rosso.html"></div>
 
-    <header>
-        <nav>
-            <div class="logo">LegatiDalFilo</div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="la_nostra_collezione.html">Collezione</a></li>
-                <li><a href="chi_siamo.html">Chi Siamo</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div data-include="/html/headers.html"></div>
 
     <section class="products product-detail-page" id="products">
         
@@ -38,10 +21,12 @@
             <!-- Le magliette verranno caricate dinamicamente da JavaScript -->
         </div>
     </section>
+    <!-- Footer incluso automaticamente -->
+    <div data-include="/html/footer.html"></div>
 
-    <script src="js/include-components.js"></script>
+    <script src="js/include_components.js"></script>
 
-    <script src="script.js"></script>
-    <script src="bianco_loader.js"></script>
+    <script src="/js/script.js"></script>
+    <script src="/js/colori/bianco_loader.js"></script>
 </body>
 </html>

@@ -1,36 +1,14 @@
 <!--index.html-->
 <!DOCTYPE html>
 <html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LegatiDalFilo - Magliette che Parlano al Cuore</title>
-    <link rel="stylesheet" href="style.css">
-     <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-  />
-</head>
+<!-- Head incluso automaticamente -->
+<div class ="header-container" data-include="/html/head.html"></div>
 <body>
     <!-- Filo rosso diagonale principale -->
-    <div class="red-thread-diagonal"></div>
-    
-    <!-- Filo rosso diagonale secondario -->
-    <div class="red-thread-diagonal red-thread-secondary"></div>
-    
-    <!-- Filo rosso ondulato orizzontale -->
-    <div class="red-thread-wavy"></div>
+    <div data-include="/html/filo_rosso.html"></div>
 
-    <header>
-        <nav>
-            <div class="logo">LegatiDalFilo</div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="la_nostra_collezione.html">Collezione</a></li>
-                <li><a href="chi_siamo.html">Chi Siamo</a></li>
-            </ul>
-        </nav>
-    </header>
+   <div data-include="/html/headers.html"></div>
+    <!--<div id="header-container"></div>-->
 
     <section class="hero" id="home">
         <div class="hero-content animate__animated animate__bounce">
@@ -40,18 +18,24 @@
         </div>
     </section>
 
-    <footer>
-        <div class="footer-content">
-            <div class="logo">LegatiDalFilo</div>
-            <div class="social-links">
-                <a href="https://www.instagram.com/legatidalfilo/" target="_blank" rel="noopener noreferrer">
-   <img src="instagram.svg" alt="Icona instagram" width="200" height="200">
-                </a>
-            </div>
-            <p class="footer-text">© 2025 LegatiDalFilo - Non e' solo una t-shirt. E' un messaggio, a colori.</p>
-        </div>
-    </footer>
+     
 
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/include_components.js"></script>
+    <!--<script>
+  fetch('headers.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('header-container').innerHTML = data;
+    })
+    .catch(error => console.error('Errore nel caricamento dell\'header:', error));
+</script>-->
+<!-- Footer incluso automaticamente -->
+    <div data-include="/html/footer.html"></div>
+
+    <script src="js/include_components.js"></script>
+
+    <script src="/js/script.js"></script>
+    
 </body>
 </html>

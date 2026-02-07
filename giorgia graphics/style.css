@@ -162,11 +162,12 @@ section {
 .home-content {
     text-align: center;
     max-width: 1200px;
+    width: 100%;
 }
 
 .home-content h1 {
     font-size: clamp(60px, 10vw, 120px);
-    letter-spacing: 15px;
+    letter-spacing: 12px;
     margin-bottom: 20px;
     text-transform: uppercase;
     animation: glitch 3s infinite;
@@ -213,11 +214,16 @@ section {
 /* About Section */
 .about-content {
     max-width: 1200px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 50px;
     align-items: center;
     text-align: center;
+}
+
+.about-text {
+    width: 100%;
 }
 
 .about-text h2 {
@@ -228,7 +234,7 @@ section {
 }
 
 .about-text p {
-    font-size: 18px;
+    font-size: 20px;
     line-height: 1.8;
     margin-bottom: 20px;
     text-shadow: 0 2px 10px rgba(0,0,0,0.3);
@@ -252,8 +258,8 @@ section {
 }
 
 .about-image img {
-    width: 100%;
-    height: 200%;
+    width: 130%;
+    height: 140%;
     object-fit: cover;
     object-position: center;
 }
@@ -292,6 +298,8 @@ section {
     text-align: center;
     text-transform: uppercase;
 }
+
+
 
 .projects-grid {
     display: grid;
@@ -340,10 +348,12 @@ section {
 }
 
 .project-card p {
-    font-size: 16px;
-    line-height: 1.6;
-    opacity: 0.9;
+    font-size: 18px;
+    margin-bottom: 15px;
+    letter-spacing: 3px;
 }
+
+
 
 .project-tag {
     display: inline-block;
@@ -382,6 +392,7 @@ section {
     padding: 50px;
     border-radius: 20px;
     box-shadow: 0 20px 60px rgba(255,20,147,0.3);
+    width: 100%;
 }
 
 .form-group {
@@ -528,45 +539,73 @@ section {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
 }
+/* Footer */
+footer {
+  
+    position: relative;
+    top: 0;
+    width: 100%;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid rgba(255,255,255,0.2);
+}
 
-/* Responsive */
+.footer-signature {
+    font-size: 24px;
+    font-weight: 300;
+    letter-spacing: 4px;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    text-shadow: 
+        0 0 20px rgba(255,20,147,0.6),
+        0 0 40px rgba(185,103,255,0.4);
+    font-style: italic;
+    position: relative;
+    padding: 10px 20px;
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 50px;
+    background: rgba(255,255,255,0.05);
+    transition: all 0.3s ease;
+    animation: float 8s ease-in-out infinite;
+}
+
+.footer-signature::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #FF1493, #B967FF, #7209B7);
+    border-radius: 50px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.footer-signature:hover::before {
+    opacity: 1;
+}
+
+.footer-signature:hover {
+    transform: translateY(-3px);
+    text-shadow: 
+        0 0 30px rgba(255,20,147,0.8),
+        0 0 60px rgba(185,103,255,0.6);
+}
+
+
+/* ==================== RESPONSIVE MOBILE ==================== */
+
 @media (max-width: 768px) {
+    /* NAVIGAZIONE MOBILE */
     nav {
-        padding: 20px;
-    }
-
-    .nav-links {
-        position: fixed;
-        right: -100%;
-        top: 80px;
-        flex-direction: column;
-        background: rgba(255,20,147,0.95);
-        backdrop-filter: blur(20px);
-        width: 100%;
-        padding: 50px;
-        gap: 30px;
-        transition: right 0.3s;
-    }
-
-    .nav-links.active {
-        right: 0;
-    }
-
-    .burger {
-        display: flex;
-    }
-
-    .about-content {
-        grid-template-columns: 1fr;
-    }
-
-    .about-image {
-        width: 300px;
-        height: 300px;
-    }
-
-    section {
-        padding: 80px 20px;
+        padding: 15px 20px;
     }
 
     .logo {
@@ -574,191 +613,275 @@ section {
         letter-spacing: 4px;
     }
 
-    .contact-form {
-        padding: 30px 20px;
+    .nav-links {
+        position: fixed;
+        right: -100%;
+        top: 70px;
+        flex-direction: column;
+        background: rgba(255,20,147,0.98);
+        backdrop-filter: blur(20px);
+        width: 100%;
+        height: calc(100vh - 70px);
+        padding: 50px;
+        gap: 40px;
+        transition: right 0.3s;
+        justify-content: center;
+        align-items: center;
     }
 
-/* Aggiungi dopo la sezione @media (max-width: 768px) */
+    .nav-links.active {
+        right: 0;
+    }
 
-@media (max-width: 768px) {
-    /* Modifiche esistenti... */
-    
-    /* HOME SECTION MOBILE */
+    .nav-links a {
+        font-size: 20px;
+    }
+
+    .burger {
+        display: flex;
+    }
+
+    /* SEZIONI GENERALI */
+    section {
+        padding: 60px 20px;
+        min-height: auto;
+    }
+
+    #home {
+        min-height: 100vh;
+    }
+
+    /* HOME SECTION - FIX TITOLO */
+    .home-content {
+        padding: 0 10px;
+    }
+
     .home-content h1 {
-        font-size: clamp(40px, 12vw, 60px);
-        letter-spacing: 8px;
-        line-height: 1.2;
-        margin-bottom: 15px;
+        font-size: 48px !important;
+        letter-spacing: 2px !important;
+        line-height: 1.1;
+        margin-bottom: 20px;
+        word-break: keep-all;
     }
     
     .subtitle {
-        font-size: clamp(16px, 5vw, 24px);
-        letter-spacing: 4px;
+        font-size: 18px !important;
+        letter-spacing: 3px !important;
         margin-bottom: 40px;
         line-height: 1.4;
+        padding: 0 10px;
     }
     
     .cta-button {
-        padding: 15px 30px;
+        padding: 15px 35px;
         font-size: 14px;
-        width: 100%;
-        max-width: 300px;
-        margin: 0 auto;
+        letter-spacing: 2px;
+        width: auto;
+        display: inline-block;
     }
     
-    /* ABOUT SECTION MOBILE */
+    /* ABOUT SECTION */
     .about-content {
-        flex-direction: column;
         gap: 40px;
+        padding: 0 10px;
     }
     
     .about-text h2 {
-        font-size: clamp(32px, 8vw, 48px);
-        letter-spacing: 5px;
+        font-size: 36px !important;
+        letter-spacing: 5px !important;
         margin-bottom: 20px;
     }
     
     .about-text p {
-        font-size: 16px;
-        line-height: 1.6;
-        padding: 0 10px;
+        font-size: 20px;
+        line-height: 1.7;
+        padding: 0;
+        text-align: center;
     }
+
+    
     
     .about-image {
-        width: 250px;
-        height: 250px;
+        width: 280px;
+        height: 280px;
         margin: 20px auto;
     }
     
-    /* PROJECTS SECTION MOBILE */
+    /* PROJECTS SECTION */
+    .projects-content {
+        padding: 0 10px;
+    }
+
     .projects-content h2 {
-        font-size: clamp(32px, 8vw, 48px);
-        letter-spacing: 5px;
+        font-size: 36px !important;
+        letter-spacing: 5px !important;
         margin-bottom: 40px;
     }
     
     .projects-grid {
         grid-template-columns: 1fr;
-        gap: 25px;
-        padding: 0 10px;
+        gap: 30px;
     }
     
     .project-card {
-        padding: 25px;
-        margin: 0 auto;
+        padding: 30px 25px;
         width: 100%;
+        max-width: 100%;
     }
     
     .project-card h3 {
         font-size: 22px;
-        margin-bottom: 10px;
+        letter-spacing: 2px;
+        margin-bottom: 12px;
     }
     
-    /* CONTACT SECTION MOBILE */
+    .project-card p {
+    font-size: 18px;
+    /*margin-bottom: 15px;*/
+    letter-spacing: 3px;
+    }
+    
+    
+    /* CONTACT SECTION - FIX FORM CENTRATA */
+    .contact-content {
+        width: 100%;
+        max-width: 100%;
+        padding: 0 10px;
+    }
+
     .contact-content h2 {
-        font-size: clamp(32px, 8vw, 48px);
-        letter-spacing: 5px;
+        font-size: 36px !important;
+        letter-spacing: 5px !important;
+        margin-bottom: 20px;
     }
     
     .contact-content p {
         font-size: 16px;
         padding: 0 10px;
+        margin-bottom: 40px;
     }
     
     .contact-form {
         padding: 30px 20px;
+        width: 100%;
         margin: 0 auto;
+        box-sizing: border-box;
     }
     
     .form-group {
-        margin-bottom: 20px;
+        margin-bottom: 25px;
+        width: 100%;
+    }
+
+    .form-group label {
+        font-size: 12px;
+        letter-spacing: 1px;
     }
     
     .form-group input,
     .form-group textarea {
         padding: 12px 15px;
         font-size: 16px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .form-group textarea {
+        min-height: 120px;
     }
     
     .submit-button {
-        padding: 15px;
+        padding: 15px 20px;
         font-size: 14px;
+        letter-spacing: 2px;
+        width: 100%;
     }
     
-    /* SOCIAL LINKS MOBILE */
+    /* SOCIAL LINKS */
     .social-links {
         margin-top: 40px;
         gap: 20px;
+        width: 100%;
+        justify-content: center;
     }
     
     .social-link {
         padding: 12px 25px;
         font-size: 14px;
-        justify-content: center;
+    }
+
+    .social-links img {
+        max-width: 150px;
+        height: auto;
     }
     
-    /* DECO CIRCLES MOBILE */
+    /* ELEMENTI DECORATIVI - Nascondi su mobile */
     .deco-1, .deco-2 {
-        display: none; /* Nascondi cerchi decorativi su mobile per più spazio */
+        display: none;
     }
     
-    /* ANIMATED BG MOBILE */
+    /* BACKGROUND ANIMATO */
     .animated-bg::before,
     .animated-bg::after {
-        width: 300px;
-        height: 300px;
+        width: 250px;
+        height: 250px;
+    }
+
+    /* TOUCH FEEDBACK */
+    .cta-button:active, 
+    .submit-button:active, 
+    .social-link:active,
+    .project-card:active {
+        transform: scale(0.98);
+    }
+
+     /* FOOTER MOBILE */
+    footer {
+        padding: 30px 20px;
+        justify-content: center;
+    }
+
+    .footer-signature {
+        font-size: 20px;
+        letter-spacing: 6px;
+        padding: 8px 16px;
     }
 }
 
-/* Per schermi molto piccoli (iPhone SE e simili) */
+/* iPhone SE e schermi molto piccoli */
 @media (max-width: 375px) {
-    section {
-        padding: 60px 15px;
-    }
-    
     .home-content h1 {
-        font-size: 36px;
-        letter-spacing: 6px;
+        font-size: 40px !important;
+        letter-spacing: 4px !important;
     }
     
     .subtitle {
-        font-size: 18px;
-        letter-spacing: 3px;
+        font-size: 16px !important;
+        letter-spacing: 2px !important;
     }
-    
+
     .about-image {
-        width: 220px;
-        height: 220px;
-    }
-    
-    .project-card {
-        padding: 20px;
+        width: 240px;
+        height: 240px;
     }
     
     .contact-form {
         padding: 25px 15px;
     }
+
+    .project-card {
+        padding: 25px 20px;
+    }
 }
 
-/* Assicurati che le sezioni siano centrate verticalmente */
+/* Fix per prevenire zoom su input in iOS */
 @media (max-width: 768px) {
-    section {
-        min-height: auto;
-        padding: 80px 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    #home {
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    input, textarea, select {
+        font-size: 16px !important;
     }
 }
 
-/* Migliora la leggibilità del testo */
+/* Migliora leggibilità generale */
 @media (max-width: 768px) {
     body {
         line-height: 1.6;
@@ -766,54 +889,5 @@ section {
     
     h1, h2, h3 {
         line-height: 1.2;
-        text-align: center;
     }
-    
-    p {
-        text-align: center;
-    }
-}
-
-/* Assicura che il menu mobile sia a tutta altezza */
-@media (max-width: 768px) {
-    .nav-links {
-        top: 70px;
-        height: calc(100vh - 70px);
-        justify-content: center;
-        align-items: center;
-        gap: 40px;
-    }
-    
-    .nav-links li {
-        text-align: center;
-    }
-    
-    .nav-links a {
-        font-size: 20px;
-    }
-}
-
-/* Aggiungi questa regola per prevenire zoom su input in iOS */
-@media (max-width: 768px) {
-    input, textarea, select {
-        font-size: 16px !important;
-    }
-}
-
-/* Migliora il touch feedback */
-@media (max-width: 768px) {
-    .cta-button, 
-    .submit-button, 
-    .social-link,
-    .project-card {
-        transition: transform 0.2s, background 0.2s;
-    }
-    
-    .cta-button:active, 
-    .submit-button:active, 
-    .social-link:active,
-    .project-card:active {
-        transform: scale(0.98);
-    }
-}
 }

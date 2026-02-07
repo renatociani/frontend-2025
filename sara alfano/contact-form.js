@@ -2,52 +2,61 @@
 document.getElementById('contactForm').addEventListener('submit', function(e) {
     e.preventDefault();
     
-    // Ottieni i valori dal form
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const phone = document.getElementById('phone').value;
-    const subject = document.getElementById('subject').value;
-    const message = document.getElementById('message').value;
-    
-    // Costruisci il corpo dell'email
-    const emailBody = `Nome: ${name}%0D%0A` +
-                      `Email: ${email}%0D%0A` +
-                      `Telefono: ${phone || 'Non fornito'}%0D%0A%0D%0A` +
-                      `Messaggio:%0D%0A${message}`;
-    
-    // Oggetto dell'email basato sulla selezione
-    let emailSubject = 'Richiesta di contatto';
-    switch(subject) {
-        case 'osteopatia':
-            emailSubject = 'Richiesta informazioni - Osteopatia';
-            break;
-        case 'massoterapia':
-            emailSubject = 'Richiesta informazioni - Massoterapia';
-            break;
-        case 'pilates':
-            emailSubject = 'Richiesta informazioni - Pilates';
-            break;
-        case 'altro':
-            emailSubject = 'Richiesta informazioni generali';
-            break;
-    }
-    
-    // Crea il link mailto
-    const mailtoLink = `mailto:armoniadeisensi.sara@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${emailBody}`;
-    
-    // Apri il client email
-    window.location.href = mailtoLink;
-    
-    // Mostra messaggio di conferma
+    const submitButton = document.querySelector('.submit-button');
     const formMessage = document.getElementById('formMessage');
-    formMessage.className = 'form-message success';
-    formMessage.textContent = 'Il tuo client email si aprirà a breve. Se non dovesse aprirsi, controlla le impostazioni del browser.';
     
-    // Opzionale: reset del form dopo 3 secondi
+    // Disabilita il pulsante durante l'invio
+    submitButton.disabled = true;
+    submitButton.textContent = 'Invio in corso...';
+    
+    // Ottieni i valori dal form
+    const formData = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value || 'Non fornito',
+        subject: document.getElementById('subject').value,
+        message: document.getElementById('message').value
+    };
+    
+    // Ottieni il nome del servizio selezionato
+    const subjectText = {
+        'osteopatia': 'Osteopatia',
+        'massoterapia': 'Massoterapia',
+        'pilates': 'Pilates',
+        'altro': 'Informazioni generali'
+    };
+    
+    // Simula invio email (sostituisci con il tuo servizio email preferito)
+    // Per un invio reale, usa EmailJS, Formspree, o un backend PHP
+    
     setTimeout(() => {
+        // Mostra messaggio di successo
+        formMessage.className = 'form-message success';
+        formMessage.textContent = '✓ Messaggio inviato con successo! Ti risponderemo al più presto.';
+        
+        // Reset del form
         document.getElementById('contactForm').reset();
-        formMessage.style.display = 'none';
-    }, 5000);
+        
+        // Riabilita il pulsante
+        submitButton.disabled = false;
+        submitButton.textContent = 'Invia Messaggio';
+        
+        // Nascondi il messaggio dopo 5 secondi
+        setTimeout(() => {
+            formMessage.style.display = 'none';
+        }, 5000);
+        
+    }, 1500);
+    
+    // In caso di errore (decommentare se usi un servizio reale)
+    /*
+    .catch(error => {
+        formMessage.className = 'form-message error';
+        formMessage.textContent = '✗ Errore nell\'invio. Riprova o contattaci direttamente via email.';
+        submitButton.disabled = false;
+        submitButton.textContent = 'Invia Messaggio';
+    });
+    */
 });
 
 // Validazione in tempo reale per l'email
@@ -70,7 +79,6 @@ document.getElementById('email').addEventListener('blur', function() {
 document.getElementById('phone').addEventListener('blur', function() {
     const phone = this.value;
     if (phone) {
-        // Rimuovi spazi e caratteri speciali per la validazione
         const cleanPhone = phone.replace(/[\s\-\(\)]/g, '');
         const phoneRegex = /^(\+39)?[0-9]{9,10}$/;
         

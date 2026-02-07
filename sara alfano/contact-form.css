@@ -300,4 +300,41 @@
         padding: 1.2rem 2rem;
         font-size: 1rem;
     }
+
+    /* Footer */
+footer {
+    background: #0d47a1;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    font-weight: 300;
+    position: relative;
+}
+
+
+/* Footer signature */
+.footer-signature {
+    position: absolute;
+    bottom: 2rem;
+    right: 5%;
+    /*font-family: 'Brush Script MT', 'Lucida Handwriting', 'Apple Chancery', cursive;*/
+    /*font-family: 'Great Vibes', cursive;*/
+    font-family: 'Raleway', sans-serif;
+    font-style: italic;
+    font-size: 1.6rem;
+    color: white;
+    opacity: 0.8;
+    letter-spacing: 3px;
+    font-weight: 400;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    animation: float 8s ease-in-out infinite;
+}
+
+@media (max-width: 768px) {
+    .footer-signature {
+        font-size: 1.2rem;
+        right: 3%;
+        bottom: 1.5rem;
+        letter-spacing: 2px;
+    }}
 }

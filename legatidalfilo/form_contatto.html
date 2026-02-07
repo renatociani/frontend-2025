@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LegatiDalFilo - Richiedi la Tua Maglietta</title>
+    <link rel="stylesheet" href="contact-form.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+   
+      <!-- Filo rosso diagonale principale -->
+    <div data-include="/html/filo_rosso.html"></div>
+
+    <div data-include="/html/headers.html"></div>
+    <section class="contact-form-section">
+        <div class="form-container">
+            <div class="form-header">
+                <h1>Inviaci un Messaggio</h1>
+                <p>Compila il form qui sotto e ti risponderemo il prima possibile</p>
+            </div>
+
+            <form id="contactForm" class="contact-form" action="https://formsubmit.co/legatidalfilo@gmail.com" method="POST">
+                <!--<div class="form-group">
+                    <label for="name">Nome e Cognome *</label>
+                    <input type="text" id="name" name="name" required placeholder="Mario Rossi">
+                </div>-->
+               
+                  <div class="form-group">
+                    <label for="colore">Colore *</label>
+                    <select id="colore" name="colore" required>
+                        <option value="">Seleziona un colore</option>
+                        <option value="Bianco">Bianco</option>
+                        <option value="Nero">Nero</option>
+                        <option value="Bordeaux">Bordeaux</option>
+                        <option value="Verde">Verde</option>
+                        <option value="Rosa">Rosa</option>
+                        <option value="Grigio">Grigio</option>                     
+                    </select>
+                </div>
+
+                 <div class="form-group">
+                    <label for="tipo">Tipo *</label>
+                    <select id="tipo" name="tipo" required>
+                        <option value="">Seleziona un tipo</option>
+                        <option value="1"> 1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>                     
+                    </select>
+                </div>
+                
+                 <div class="form-group">
+                    <label for="taglia">Taglia *</label>
+                    <select id="taglia" name="taglia" required>
+                        <option value="">Seleziona una taglia</option>
+                        <option value="M">M</option>
+                        <option value="S">S</option>
+                        <option value="L">L</option>
+                        
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="quantita">Quantita *</label>
+                    <input type="number" id="quantita" name="quantita" required >
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required placeholder="mario.rossi@email.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Telefono *</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="+39 333 123 4567">
+                </div>
+
+               
+
+                <div class="form-group full-width">
+                    <label for="message">Messaggio </label>
+                    <textarea id="message" name="message" rows="6"  placeholder="Scrivi qui il tuo messaggio..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-button">
+                    Invia Messaggio
+                </button>
+
+                <div id="formMessage" class="form-message"></div>
+            </form>
+
+           
+        </div>
+    </section>
+    <!-- Footer incluso automaticamente -->
+    <div data-include="/html/footer.html"></div>
+    <script src="js/include_components.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/form_handler.js"></script>
+       
+</body>
+</html>
