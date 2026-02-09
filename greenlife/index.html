@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="it">
+<!-- Head incluso automaticamente -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
     <!-- HEADER -->
@@ -64,33 +65,57 @@
             </ul>
         </nav>
     </header>
+        
+        <!-- Mobile Navigation -->
+        <nav class="nav-mobile" id="navMobile">
+            <ul class="nav-mobile-list">
+                <li><a href="index.html" class="nav-mobile-link">Home</a></li>
+                <li><a href="prodotti.html" class="nav-mobile-link">Prodotti</a></li>
+                <li><a href="servizi.html" class="nav-mobile-link">Servizi</a></li>
+                <li><a href="contatti.html" class="nav-mobile-link">Contatti</a></li>
+                <li><a href="contatti.html" class="btn btn-primary-green btn-block">Richiedi un Consulto</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <!-- HERO SECTION -->
     <section class="hero">
         <div class="hero-overlay"></div>
         <div class="hero-background"></div>
+        <!-- Logo Goccia Opaco Centrato -->
+        <div class="hero-logo-watermark">
+            <img src="logo-goccia.png" alt="Green Life Watermark">
+        </div>
         <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">Acqua Pura, Vita Sana. Semplicità.</h1>
-                <p class="hero-subtitle">
-                    <strong>GreenLife</strong>, azienda leader nella progettazione, installazione e manutenzione di purificatori d'acqua.
-                </p>
-                <p class="hero-description">
-                    Siamo contro l'utilizzo della plastica in tutto e per tutto, per questo abbiamo avviato un progetto basato sull'eco-sostenibilità contribuendo a rendere il mondo più eco-friendly e Plastic-Free.
-                </p>
-                <p class="hero-description">
-                    Negli ultimi anni molte pubblicità parlano di "installazione gratuita", ma poi emergono costi nascosti, vincoli o obblighi non chiari.
-                </p>
-                <div class="hero-highlight">
-                    <p><strong>Green Life ha scelto un approccio diverso:</strong></p>
-                    <p>Tutto viene spiegato prima, senza sorprese.</p>
+            <div class="hero-content-wrapper">
+                <!-- Colonna Sinistra: Testi -->
+                <div class="hero-content">
+                    <h1 class="hero-title">Acqua Pura, Vita Sana. Semplicità.</h1>
+                    <p class="hero-subtitle">
+                        <strong>GreenLife</strong>, azienda leader nella progettazione, installazione e manutenzione di purificatori d'acqua.
+                    </p>
+                    <p class="hero-description">
+                        Siamo contro l'utilizzo della plastica in tutto e per tutto, per questo abbiamo avviato un progetto basato sull'eco-sostenibilità contribuendo a rendere il mondo più eco-friendly e Plastic-Free.
+                    </p>
+                    <p class="hero-description">
+                        Negli ultimi anni molte pubblicità parlano di "installazione gratuita", ma poi emergono costi nascosti, vincoli o obblighi non chiari.
+                    </p>
+                    <div class="hero-highlight">
+                        <p><strong>Green Life ha scelto un approccio diverso:</strong></p>
+                        <p>Tutto viene spiegato prima, senza sorprese.</p>
+                    </div>
+                    <p class="hero-cta-text">
+                        Compila il form, uno dei nostri esperti ti ricontatterà quando sarai più comodo!
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#perche-greenlife" class="btn btn-primary">Scopri di più</a>
+                        <a href="contatti.html" class="btn btn-secondary">Contattaci</a>
+                    </div>
                 </div>
-                <p class="hero-cta-text">
-                    Compila il form, uno dei nostri esperti ti ricontatterà quando sarai più comodo!
-                </p>
-                <div class="hero-buttons">
-                    <a href="#perche-greenlife" class="btn btn-primary">Scopri di più</a>
-                    <a href="contatti.html" class="btn btn-secondary">Contattaci</a>
+                
+                <!-- Colonna Destra: Quadrato Trasparente per Foto -->
+                <div class="hero-image-box">
+                    <img src="hero-foto.jpg" alt="Green Life" class="hero-photo">
                 </div>
             </div>
         </div>
@@ -240,58 +265,9 @@
     </section>
 
     <!-- FOOTER -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-col">
-                    <div class="footer-logo">
-                        <img src="logo.png" alt="Green Life Logo">
-                    </div>
-                    <p class="footer-slogan">Acqua pura per una vita sana e sostenibile.</p>
-                    <div class="social-links">
-                        <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                
-                <div class="footer-col">
-                    <h4 class="footer-title">Link Rapidi</h4>
-                    <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="prodotti.html">Prodotti</a></li>
-                        <li><a href="servizi.html">Servizi</a></li>
-                        <li><a href="contatti.html">Contatti</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-col">
-                    <h4 class="footer-title">Contatti</h4>
-                    <ul class="footer-contacts">
-                        <li><i class="fas fa-map-marker-alt"></i> Via della Purezza 123, 20100 Milano</li>
-                        <li><a href="tel:+390212345678"><i class="fas fa-phone"></i> +39 02 1234 5678</a></li>
-                        <li><a href="mailto:info@greenlife.it"><i class="fas fa-envelope"></i> info@greenlife.it</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-col">
-                    <h4 class="footer-title">Newsletter</h4>
-                    <p class="footer-newsletter-text">Iscriviti per ricevere offerte esclusive e consigli.</p>
-                    <form class="newsletter-form" id="newsletterForm">
-                        <input type="email" placeholder="La tua email" required>
-                        <button type="submit" class="btn btn-newsletter">Iscriviti</button>
-                    </form>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2024 Green Life. Tutti i diritti riservati.</p>
-                <a href="#" class="privacy-link">Privacy Policy</a>
-            </div>
-        </div>
-    </footer>
-
+     <div data-include="/html/footer.html"></div>
     <!-- JavaScript -->
     <script src="script.js"></script>
+    
 </body>
 </html>

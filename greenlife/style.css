@@ -5,7 +5,7 @@
 :root {
     /* Colori */
     --color-primary-blue: #1e40af;
-    --color-primary-green: #105511bc;
+    --color-primary-green: #10b981;
     --color-white: #ffffff;
     --color-gray-light: #f9fafb;
     --color-gray-medium: #f3f4f6;
@@ -297,7 +297,7 @@ button {
 }
 
 .btn-primary-green:hover {
-    background-color: #105511bc;
+    background-color: #059669;
     transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
 }
@@ -334,7 +334,7 @@ button {
 }
 
 .btn-cta:hover {
-    background-color: #105511bc;
+    background-color: #059669;
     transform: translateY(-3px);
     box-shadow: var(--shadow-xl);
 }
@@ -351,7 +351,7 @@ button {
 }
 
 .btn-newsletter:hover {
-    background-color: #105511bc;
+    background-color: #059669;
 }
 
 /* ========================================
@@ -374,10 +374,7 @@ button {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('https://placehold.co/1920x1080/06b6d4/ffffff?text=Acqua+Pura+Green+Life');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: linear-gradient(135deg, #1e40af 0%, #06b6d4 100%);
     z-index: -2;
 }
 
@@ -391,9 +388,76 @@ button {
     z-index: -1;
 }
 
+/* Logo Goccia Watermark Opaco */
+.hero-logo-watermark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    opacity: 0.08;
+    pointer-events: none;
+}
+
+.hero-logo-watermark img {
+    width: 400px;
+    height: auto;
+    max-width: 90vw;
+}
+
+/* Layout a 2 Colonne */
+.hero-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
 .hero-content {
-    max-width: 800px;
+    flex: 1;
     color: var(--color-white);
+    text-align: center;
+}
+
+/* Quadrato Trasparente per Foto */
+.hero-image-box {
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 1 / 1;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: var(--radius-xl);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: var(--transition-base);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-image-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.hero-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.95;
+}
+
+/* Se non c'è ancora l'immagine, mostra un placeholder */
+.hero-image-box:empty::before {
+    content: 'Inserisci la tua foto qui';
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1.125rem;
+    font-weight: var(--font-weight-medium);
     text-align: center;
 }
 
@@ -484,7 +548,7 @@ button {
 }
 
 .feature-icon-green {
-    background: linear-gradient(135deg, var(--color-primary-green), #105511bc);
+    background: linear-gradient(135deg, var(--color-primary-green), #34d399);
 }
 
 .feature-title {
@@ -929,7 +993,7 @@ button {
 
 .form-success {
     background-color: #d1fae5;
-    color:#105511bc;;
+    color: #065f46;
 }
 
 .form-error {
@@ -980,6 +1044,30 @@ button {
         display: none;
     }
     
+    /* Hero - Layout a 2 colonne su tablet */
+    .hero-content-wrapper {
+        flex-direction: row;
+        align-items: center;
+        gap: var(--spacing-2xl);
+    }
+    
+    .hero-content {
+        text-align: left;
+        max-width: 600px;
+    }
+    
+    .hero-image-box {
+        max-width: 350px;
+    }
+    
+    .hero-buttons {
+        justify-content: flex-start;
+    }
+    
+    .hero-logo-watermark img {
+        width: 500px;
+    }
+    
     /* Grids */
     .features-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -1025,6 +1113,19 @@ button {
         font-size: 3rem;
     }
     
+    /* Hero Desktop */
+    .hero-content {
+        max-width: 650px;
+    }
+    
+    .hero-image-box {
+        max-width: 450px;
+    }
+    
+    .hero-logo-watermark img {
+        width: 600px;
+    }
+    
     /* Grids */
     .features-grid {
         grid-template-columns: repeat(4, 1fr);
@@ -1050,7 +1151,7 @@ button {
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(90px);
     }
     to {
         opacity: 1;
