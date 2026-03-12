@@ -253,3 +253,63 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(el);
     });
 });
+
+/* ========================================
+   TESTI DINAMICI PRODOTTI
+   ======================================== */
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Testi per la prima sezione (Casa/Famiglia)
+    const texts1 = ['La Famiglia', 'Il tuo Benessere', 'La Casa'];
+    // Testi per la seconda sezione (Business)
+    const texts2 = ['Hotel', 'Uffici', 'Ristoranti'];
+    
+    const dynamicText1 = document.getElementById('dynamicText1');
+    const dynamicText2 = document.getElementById('dynamicText2');
+    
+    // Funzione per animare il cambio di testo
+    function changeText(element, textsArray, currentIndex) {
+        if (!element) return currentIndex;
+        
+        // Fade out
+        element.style.opacity = '0';
+        element.style.transform = 'translateY(-10px)';
+        
+        setTimeout(() => {
+            // Cambia il testo
+            currentIndex = (currentIndex + 1) % textsArray.length;
+            element.textContent = textsArray[currentIndex];
+            
+            // Fade in
+            element.style.opacity = '1';
+            element.style.transform = 'translateY(0)';
+        }, 500);
+        
+        return currentIndex;
+    }
+    
+    // Inizializza i testi
+    if (dynamicText1) {
+        let index1 = 0;
+        dynamicText1.textContent = texts1[index1];
+        dynamicText1.style.transition = 'all 0.5s ease';
+        
+        // Cambia testo ogni 3 secondi
+        setInterval(() => {
+            index1 = changeText(dynamicText1, texts1, index1);
+        }, 3000);
+    }
+    
+    if (dynamicText2) {
+        let index2 = 0;
+        dynamicText2.textContent = texts2[index2];
+        dynamicText2.style.transition = 'all 0.5s ease';
+        
+        // Cambia testo ogni 3 secondi (sfasato di 1.5s)
+        setTimeout(() => {
+            setInterval(() => {
+                index2 = changeText(dynamicText2, texts2, index2);
+            }, 3000);
+        }, 1500);
+    }
+});

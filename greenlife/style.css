@@ -4,14 +4,14 @@
 
 :root {
     /* Colori */
-    --color-primary-blue: #1e40af;
-    --color-primary-green: #10b981;
+    --color-primary-blue: #0072ce;
+    --color-primary-green: #009A17;
     --color-white: #ffffff;
     --color-gray-light: #f9fafb;
     --color-gray-medium: #f3f4f6;
-    --color-aqua: #06b6d4;
-    --color-aqua-light: #a5f3fc;
-    --color-aqua-lightest: #ecfeff;
+    --color-aqua:#009A17;
+    --color-aqua-light: #009A17;
+    --color-aqua-lightest: #d1fae5;
     --color-text-dark: #1f2937;
     --color-text-medium: #4b5563;
     --color-text-light: #6b7280;
@@ -137,6 +137,8 @@ button {
     box-shadow: var(--shadow-md);
     z-index: 1000;
     transition: var(--transition-base);
+    animation: bounce; /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 2s; /* don't forget to set a duration! */
 }
 
 .header-content {
@@ -145,6 +147,8 @@ button {
     justify-content: space-between;
     padding: var(--spacing-sm) 0;
     gap: var(--spacing-lg);
+    animation: backInLeft; /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 1s; /* don't forget to set a duration! */
 }
 
 .logo-container {
@@ -286,7 +290,7 @@ button {
 }
 
 .btn-primary:hover {
-    background-color: #1e3a8a;
+    background-color: #0072ce;
     transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
 }
@@ -297,7 +301,7 @@ button {
 }
 
 .btn-primary-green:hover {
-    background-color: #059669;
+    background-color: #0072ce;
     transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
 }
@@ -334,7 +338,7 @@ button {
 }
 
 .btn-cta:hover {
-    background-color: #059669;
+    background-color: #009A17;
     transform: translateY(-3px);
     box-shadow: var(--shadow-xl);
 }
@@ -351,7 +355,7 @@ button {
 }
 
 .btn-newsletter:hover {
-    background-color: #059669;
+    background-color: #009A17;
 }
 
 /* ========================================
@@ -366,6 +370,8 @@ button {
     justify-content: center;
     padding: calc(80px + var(--spacing-xl)) var(--spacing-md) var(--spacing-xl);
     overflow: hidden;
+    animation: backInLeft; /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 2s; /* don't forget to set a duration! */
 }
 
 .hero-background {
@@ -374,7 +380,7 @@ button {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, #1e40af 0%, #06b6d4 100%);
+    background: linear-gradient(135deg, #0072ce 40%,#009A17 60%);
     z-index: -2;
 }
 
@@ -384,7 +390,7 @@ button {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(30, 64, 175, 0.85) 0%, rgba(6, 182, 212, 0.75) 100%);
+    background: linear-gradient(135deg, #0072ce 40%, #009A17 60%);
     z-index: -1;
 }
 
@@ -395,7 +401,7 @@ button {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 0;
-    opacity: 0.08;
+    opacity: 0.60;
     pointer-events: none;
 }
 
@@ -403,6 +409,36 @@ button {
     width: 400px;
     height: auto;
     max-width: 90vw;
+}
+
+/* Icone Salute nel Hero */
+.hero-health-icon {
+    position: absolute;
+    color: var(--color-white);
+    opacity: 0.08;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.hero-health-icon-1 {
+    top: 15%;
+    right: 8%;
+    font-size: 10rem;
+    transform: rotate(-15deg);
+}
+
+.hero-health-icon-2 {
+    bottom: 20%;
+    left: 10%;
+    font-size: 12rem;
+    transform: rotate(20deg);
+}
+
+.hero-health-icon-3 {
+    top: 60%;
+    right: 12%;
+    font-size: 8rem;
+    transform: rotate(-10deg);
 }
 
 /* Layout a 2 Colonne */
@@ -538,7 +574,7 @@ button {
     width: 80px;
     height: 80px;
     margin: 0 auto var(--spacing-md);
-    background: linear-gradient(135deg, var(--color-primary-blue), var(--color-aqua));
+    background: linear-gradient(135deg, var(--color-primary-blue));
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -548,7 +584,7 @@ button {
 }
 
 .feature-icon-green {
-    background: linear-gradient(135deg, var(--color-primary-green), #34d399);
+    background: linear-gradient(135deg, var(--color-primary-green),#009A17);
 }
 
 .feature-title {
@@ -648,7 +684,7 @@ button {
     flex-shrink: 0;
     width: 70px;
     height: 70px;
-    background: linear-gradient(135deg, var(--color-primary-blue), var(--color-aqua));
+    background: linear-gradient(135deg, var(--color-primary-blue));
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -846,10 +882,118 @@ button {
    ======================================== */
 
 .page-header {
-    padding: calc(80px + var(--spacing-xl)) 0 var(--spacing-xl);
+    padding: calc(80px + var(--spacing-2xl)) 0 var(--spacing-2xl);
     background: linear-gradient(135deg, var(--color-primary-blue), var(--color-aqua));
     color: var(--color-white);
     text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Icone decorative nel page header */
+.page-header-with-icons {
+    position: relative;
+}
+
+.page-header-icon {
+    position: absolute;
+    font-size: 12rem;
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+.page-header-icon-left {
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%) rotate(-15deg);
+}
+
+.page-header-icon-right {
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%) rotate(15deg);
+}
+
+/* Icone famiglia */
+.page-header-icon-family-left {
+    top: 20%;
+    left: 15%;
+    font-size: 8rem;
+    opacity: 0.12;
+    transform: rotate(-10deg);
+}
+
+.page-header-icon-family-right {
+    top: 75%;
+    right: 15%;
+    font-size: 7rem;
+    opacity: 0.12;
+    transform: rotate(10deg);
+}
+
+/* Icone Prodotti nel page header */
+.page-header-product-icon {
+    position: absolute;
+    color: var(--color-white);
+    opacity: 0.1;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.page-header-product-icon-1 {
+    top: 46%;
+    left: 8%;
+    font-size: 10rem;
+    transform: rotate(-15deg);
+}
+
+.page-header-product-icon-2 {
+    bottom: 8%;
+    right: 10%;
+    font-size: 10rem;
+    transform: rotate(15deg);
+}
+
+.page-header-product-icon-3 {
+    top: 50%;
+    right: 5%;
+    font-size: 8rem;
+    transform: rotate(-10deg);
+}
+
+/* Icone Servizi nel page header */
+.page-header-service-icon {
+    position: absolute;
+    color: var(--color-white);
+    opacity: 0.1;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.page-header-service-icon-1 {
+    top: 35%;
+    left: 10%;
+    font-size: 10rem;
+    transform: rotate(-20deg);
+}
+
+.page-header-service-icon-2 {
+    bottom: 2%;
+    right: 8%;
+    font-size: 10rem;
+    transform: rotate(15deg);
+}
+
+.page-header-service-icon-3 {
+    top: 30%;
+    right: 12%;
+    font-size: 4rem;
+    transform: rotate(-5deg);
+}
+
+.page-header .container {
+    position: relative;
+    z-index: 1;
 }
 
 .page-title {
@@ -882,7 +1026,7 @@ button {
     color: var(--color-text-dark);
     margin-bottom: var(--spacing-md);
     padding-bottom: var(--spacing-sm);
-    border-bottom: 3px solid var(--color-aqua);
+    /*border-bottom: 3px solid var(--color-aqua);*/
 }
 
 .product-specs {
@@ -993,7 +1137,7 @@ button {
 
 .form-success {
     background-color: #d1fae5;
-    color: #065f46;
+    color:#009A17;
 }
 
 .form-error {
@@ -1014,6 +1158,556 @@ button {
 }
 
 /* ========================================
+   PAGINA CHI SIAMO
+   ======================================== */
+
+.chi-siamo-hero {
+    background: linear-gradient(135deg, var(--color-primary-blue), var(--color-aqua));
+    padding: calc(80px + var(--spacing-3xl)) 0 var(--spacing-3xl);
+    text-align: center;
+    color: var(--color-white);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Icone Chi Siamo nel banner */
+.chi-siamo-icon {
+    position: absolute;
+    color: var(--color-white);
+    opacity: 0.1;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.chi-siamo-icon-1 {
+    top: 20%;
+    left: 8%;
+    font-size: 12rem;
+    transform: rotate(-15deg);
+}
+
+.chi-siamo-icon-2 {
+    bottom: 15%;
+    right: 10%;
+    font-size: 14rem;
+    transform: rotate(15deg);
+}
+
+.chi-siamo-hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+.chi-siamo-hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.chi-siamo-subtitle {
+    font-size: 1rem;
+    font-weight: var(--font-weight-medium);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    opacity: 0.9;
+    margin-bottom: var(--spacing-md);
+}
+
+.chi-siamo-title {
+    font-size: 3rem;
+    font-weight: var(--font-weight-bold);
+    line-height: 1.2;
+    margin-bottom: 0;
+}
+
+.chi-siamo-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+}
+
+.chi-siamo-card {
+    background-color: var(--color-white);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-md);
+    text-align: center;
+    transition: var(--transition-base);
+    border: 2px solid transparent;
+}
+
+.chi-siamo-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--color-primary-blue);
+}
+
+.chi-siamo-card-green {
+    background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+}
+
+.chi-siamo-card-green:hover {
+    border-color: var(--color-primary-green);
+}
+
+.chi-siamo-card-blue {
+    background: linear-gradient(135deg, #f0fdf4, #dcecfc);
+}
+
+.chi-siamo-card-blue:hover {
+    border-color: var(--color-primary-blue);
+}
+
+.chi-siamo-card-icon {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto var(--spacing-lg);
+    background: linear-gradient(135deg, var(--color-primary-blue));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-white);
+    font-size: 2.5rem;
+    box-shadow: var(--shadow-lg);
+}
+
+.chi-siamo-card-icon-green {
+    background: linear-gradient(135deg, var(--color-primary-green));
+}
+
+.chi-siamo-card-icon-blue {
+    background: linear-gradient(135deg, var(--color-primary-blue));
+}
+
+.chi-siamo-card-title {
+    font-size: 1.75rem;
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--spacing-md);
+    color: var(--color-text-dark);
+}
+
+.chi-siamo-card-description {
+    color: var(--color-text-medium);
+    line-height: 1.8;
+    font-size: 1.0625rem;
+}
+
+/* Valori */
+.values-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.value-item {
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: flex-start;
+    padding: var(--spacing-lg);
+    background-color: var(--color-white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition-fast);
+}
+
+.value-item:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateX(10px);
+}
+
+.value-icon {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--color-primary-green), var(--color-aqua));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-white);
+    font-size: 1.5rem;
+}
+
+.value-content h4 {
+    font-size: 1.25rem;
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--spacing-xs);
+    color: var(--color-text-dark);
+}
+
+.value-content p {
+    color: var(--color-text-medium);
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* ========================================
+   SEZIONI DINAMICHE PRODOTTI
+   ======================================== */
+
+.dynamic-sections {
+    padding: var(--spacing-3xl) 0;
+    background-color: var(--color-white);
+}
+
+.dynamic-sections-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-2xl);
+}
+
+.dynamic-section {
+    text-align: center;
+    padding: var(--spacing-2xl);
+    background: linear-gradient(135deg, #f9fafb, #ffffff);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-md);
+}
+
+.dynamic-title {
+    font-size: 2.5rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-dark);
+    line-height: 1.3;
+}
+
+.static-text {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-medium);
+    margin-bottom: var(--spacing-xs);
+}
+
+.dynamic-text {
+    display: block;
+    color: var(--color-primary-blue);
+    font-size: 3rem;
+    font-weight: var(--font-weight-bold);
+    min-height: 1.2em;
+    transition: var(--transition-base);
+}
+
+.dynamic-text.fade-out {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.dynamic-text.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ========================================
+   CARD CATEGORIA PRODOTTI
+   ======================================== */
+
+.product-cards-section {
+    padding: var(--spacing-3xl) 0;
+    background-color: var(--color-white);
+}
+
+.product-cards-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.product-category-card {
+    position: relative;
+    background: linear-gradient(135deg, #f0f9ff, #ffffff);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-2xl);
+    min-height: 300px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: var(--transition-base);
+    box-shadow: var(--shadow-md);
+    border: 2px solid transparent;
+}
+
+.product-category-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--color-primary-blue);
+}
+
+.product-category-card:first-child {
+    background: linear-gradient(135deg, #eff6ff, #dbeafe);
+}
+
+.product-category-card:first-child:hover {
+    border-color: var(--color-primary-blue);
+}
+
+.product-category-card:last-child {
+    background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+}
+
+.product-category-card:last-child:hover {
+    border-color: var(--color-primary-green);
+}
+
+.card-icon-background {
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    font-size: 15rem;
+    color: rgba(0, 114, 206, 0.05);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.product-category-card:last-child .card-icon-background {
+    color: rgba(0, 154, 23, 0.05);
+}
+
+.card-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+}
+
+.card-title {
+    font-size: 2rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-dark);
+    margin-bottom: var(--spacing-md);
+    line-height: 1.2;
+}
+
+.card-description {
+    font-size: 1.125rem;
+    color: var(--color-text-medium);
+    margin-bottom: var(--spacing-lg);
+}
+
+.card-arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background-color: var(--color-primary-blue);
+    color: var(--color-white);
+    border-radius: 50%;
+    font-size: 1.25rem;
+    transition: var(--transition-base);
+}
+
+.product-category-card:last-child .card-arrow {
+    background-color: var(--color-primary-green);
+}
+
+.product-category-card:hover .card-arrow {
+    transform: translateX(5px);
+}
+
+/* ========================================
+   LISTA PRODOTTI CASA
+   ======================================== */
+
+.products-list-section {
+    padding: var(--spacing-3xl) 0;
+    background-color: var(--color-gray-light);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Sfondo con icona casa opaca */
+.products-list-section::before {
+    content: '\f015';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50rem;
+    color: var(--color-primary-blue);
+    opacity: 0.04;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.products-list-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.product-item-card {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+    background-color: var(--color-white);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-base);
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+/* Icone gocce d'acqua decorative - ottimizzate */
+.product-item-card::before {
+    content: '\f043';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    font-size: 18rem;
+    color: var(--color-primary-blue);
+    opacity: 0.06;
+    z-index: 0;
+    pointer-events: none;
+    transform: rotate(-20deg);
+}
+
+.product-item-card::after {
+    content: '\f043 \f043';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    bottom: -30px;
+    left: -30px;
+    font-size: 14rem;
+    color: var(--color-primary-green);
+    opacity: 0.06;
+    z-index: 0;
+    pointer-events: none;
+    transform: rotate(30deg);
+    letter-spacing: 2.5rem;
+}
+
+.product-item-card > * {
+    position: relative;
+    z-index: 1;
+}
+
+.product-item-card:hover {
+    box-shadow: var(--shadow-xl);
+    transform: translateY(-5px);
+}
+
+/* Sezione Immagine e Info */
+.product-image-section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.product-image-container {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-info {
+    background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    border: 2px solid rgba(0, 114, 206, 0.1);
+    transition: var(--transition-base);
+    text-align: center;
+}
+
+.product-info:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-primary-blue);
+}
+
+.product-name {
+    font-size: 1.5rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-dark);
+    margin-bottom: var(--spacing-xs);
+}
+
+.product-brief {
+    font-size: 1rem;
+    color: var(--color-text-medium);
+    line-height: 1.5;
+}
+
+/* Sezione Dettagli */
+.product-details-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--spacing-lg) 0;
+}
+
+.product-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) 0;
+    color: var(--color-text-medium);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.product-features i {
+    color: var(--color-primary-green);
+    font-size: 1.125rem;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.btn-scheda-tecnica {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: 0.875rem 2rem;
+    background-color: var(--color-primary-blue);
+    color: var(--color-white);
+    border: none;
+    border-radius: var(--radius-lg);
+    font-weight: var(--font-weight-semibold);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition-base);
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-scheda-tecnica:hover {
+    background-color: #005a9e;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-scheda-tecnica i {
+    font-size: 1.125rem;
+}
+
+/* ========================================
    RESPONSIVE - TABLET
    ======================================== */
 
@@ -1025,6 +1719,50 @@ button {
     
     .hero-title {
         font-size: 3.5rem;
+    }
+    
+    .chi-siamo-title {
+        font-size: 3.5rem;
+    }
+    
+    /* Product Cards */
+    .product-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .card-title {
+        font-size: 2.25rem;
+    }
+    
+    /* Product Item Cards */
+    .product-item-card {
+        grid-template-columns: 300px 1fr;
+        padding: var(--spacing-xl);
+    }
+    
+    .product-image-container {
+        max-width: 300px;
+    }
+    
+    .product-info {
+        text-align: left;
+    }
+    
+    .product-name {
+        font-size: 1.75rem;
+    }
+    
+    /* Dynamic Sections */
+    .dynamic-sections-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .dynamic-title {
+        font-size: 2rem;
+    }
+    
+    .dynamic-text {
+        font-size: 2.5rem;
     }
     
     /* Header */
@@ -1066,6 +1804,11 @@ button {
     
     .hero-logo-watermark img {
         width: 500px;
+    }
+    
+    /* Chi Siamo */
+    .chi-siamo-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
     
     /* Grids */
@@ -1113,6 +1856,10 @@ button {
         font-size: 3rem;
     }
     
+    .chi-siamo-title {
+        font-size: 4.5rem;
+    }
+    
     /* Hero Desktop */
     .hero-content {
         max-width: 650px;
@@ -1142,7 +1889,40 @@ button {
     .product-image {
         height: 300px;
     }
+
 }
+/* Icone Contatti nel page header */
+.page-header-contact-icon {
+    position: absolute;
+    color: var(--color-white);
+    opacity: 0.1;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.page-header-contact-icon-1 {
+    top: 35%;
+    left: 10%;
+    font-size: 11rem;
+    transform: rotate(-15deg);
+}
+
+.page-header-contact-icon-2 {
+    bottom: 10%;
+    right: 8%;
+    font-size: 12rem;
+    transform: rotate(20deg);
+}
+
+.page-header-contact-icon-3 {
+    top: 20%;
+    right: 12%;
+    font-size: 9rem;
+    transform: rotate(-10deg);
+}
+
+
+
 
 /* ========================================
    ANIMATIONS
@@ -1151,7 +1931,7 @@ button {
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(90px);
+        transform: translateY(30px);
     }
     to {
         opacity: 1;

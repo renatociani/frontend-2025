@@ -33,6 +33,7 @@
                 <nav class="nav-desktop">
                     <ul class="nav-list">
                         <li><a href="index.html" class="nav-link">Home</a></li>
+                        <li><a href="chi_siamo.html" class="nav-link">Chi Siamo</a></li>
                         <li><a href="prodotti.html" class="nav-link active">Prodotti</a></li>
                         <li><a href="servizi.html" class="nav-link">Servizi</a></li>
                         <li><a href="contatti.html" class="nav-link">Contatti</a></li>
@@ -57,6 +58,7 @@
         <nav class="nav-mobile" id="navMobile">
             <ul class="nav-mobile-list">
                 <li><a href="index.html" class="nav-mobile-link">Home</a></li>
+                <li><a href="chi_siamo.html" class="nav-mobile-link">Chi Siamo</a></li>
                 <li><a href="prodotti.html" class="nav-mobile-link">Prodotti</a></li>
                 <li><a href="servizi.html" class="nav-mobile-link">Servizi</a></li>
                 <li><a href="contatti.html" class="nav-mobile-link">Contatti</a></li>
@@ -66,230 +68,53 @@
     </header>
 
     <!-- PAGE HEADER -->
-    <section class="page-header">
+    <section class="page-header page-header-prodotti">
+        <!-- Icone Prodotti -->
+        <i class="page-header-product-icon page-header-product-icon-1 fas fa-box"></i>
+        <i class="page-header-product-icon page-header-product-icon-2 fas fa-shopping-cart"></i>
+        <i class="page-header-product-icon page-header-product-icon-3 fas fa-tags"></i>
         <div class="container">
             <h1 class="page-title">I Nostri Prodotti</h1>
             <p class="page-subtitle">Soluzioni avanzate per ogni esigenza di purificazione dell'acqua</p>
         </div>
     </section>
 
-    <!-- PAGE CONTENT -->
-    <section class="page-content">
+    <!-- SEZIONE CARD PRODOTTI -->
+    <section class="product-cards-section">
         <div class="container">
-            <!-- DEPURATORE A OSMOSI INVERSA -->
-            <div class="product-detail" id="osmosi">
-                <h3><i class="fas fa-tint" style="color: #06b6d4; margin-right: 10px;"></i>Depuratore a Osmosi Inversa</h3>
-                
-                <div style="display: grid; grid-template-columns: 1fr; gap: 2rem; margin-bottom: 2rem;">
-                    <div>
-                        <img src="https://placehold.co/800x500/06b6d4/ffffff?text=Depuratore+Osmosi+Inversa+Green+Life" 
-                             alt="Depuratore a Osmosi Inversa" 
-                             style="width: 100%; border-radius: 1rem; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);">
+            <div class="product-cards-grid">
+                <!-- Card 1: Casa e Famiglia -->
+                <div class="product-category-card" onclick="window.location.href='prodotti_casa.html'">
+                    <div class="card-icon-background">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="card-content">
+                        <h2 class="card-title">Impianti Per la Casa e la Famiglia</h2>
+                        <p class="card-description">Soluzioni dedicate al benessere domestico</p>
+                        <div class="card-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
                     </div>
                 </div>
-                
-                <p style="font-size: 1.125rem; line-height: 1.8; color: #4b5563; margin-bottom: 1.5rem;">
-                    Il nostro sistema a <strong>osmosi inversa</strong> rappresenta l'eccellenza nella purificazione domestica. 
-                    Rimuove fino al <strong>99% delle impurità</strong>, inclusi cloro, metalli pesanti, batteri, virus e sostanze chimiche, 
-                    garantendo acqua purissima direttamente dal rubinetto di casa tua.
-                </p>
-                
-                <h4 style="font-size: 1.5rem; font-weight: 600; margin: 2rem 0 1rem; color: #1f2937;">Caratteristiche Tecniche</h4>
-                
-                <div class="product-specs">
-                    <div class="spec-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Sistema a 5 stadi di filtrazione</span>
-                    </div>
-                    <div class="spec-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Membrana osmotica da 75 GPD</span>
-                    </div>
-                    <div class="spec-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Serbatoio da 12 litri</span>
-                    </div>
-                    <div class="spec-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Rubinetto dedicato in acciaio inox</span>
-                    </div>
-                    <div class="spec-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Design compatto sottopensile</span>
-                    </div>
-                    <div class="spec-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Certificazione NSF/ANSI</span>
-                    </div>
-                </div>
-                
-                <h4 style="font-size: 1.5rem; font-weight: 600; margin: 2rem 0 1rem; color: #1f2937;">Vantaggi</h4>
-                <ul style="list-style: none; padding: 0;">
-                    <li style="padding: 0.75rem 0; border-bottom: 1px solid #f3f4f6;">
-                        <i class="fas fa-leaf" style="color: #10b981; margin-right: 10px;"></i>
-                        <strong>Ecologico:</strong> Elimina oltre 1.500 bottiglie di plastica all'anno
-                    </li>
-                    <li style="padding: 0.75rem 0; border-bottom: 1px solid #f3f4f6;">
-                        <i class="fas fa-piggy-bank" style="color: #10b981; margin-right: 10px;"></i>
-                        <strong>Risparmio:</strong> Costi ridotti fino al 70% rispetto all'acqua in bottiglia
-                    </li>
-                    <li style="padding: 0.75rem 0; border-bottom: 1px solid #f3f4f6;">
-                        <i class="fas fa-heartbeat" style="color: #10b981; margin-right: 10px;"></i>
-                        <strong>Salute:</strong> Acqua priva di sostanze nocive e microplastiche
-                    </li>
-                    <li style="padding: 0.75rem 0;">
-                        <i class="fas fa-home" style="color: #10b981; margin-right: 10px;"></i>
-                        <strong>Praticità:</strong> Acqua pura sempre disponibile in casa
-                    </li>
-                </ul>
-                
-                <div style="margin-top: 2rem;">
-                    <a href="contatti.html" class="btn btn-primary-green">Richiedi Informazioni</a>
-                </div>
-            </div>
 
-            <!-- SISTEMA A ULTRAFILTRAZIONE -->
-            <div class="product-detail" id="ultrafiltrazione">
-                <h3><i class="fas fa-building" style="color: #10b981; margin-right: 10px;"></i>Sistema a Ultrafiltrazione</h3>
-                
-                <div style="display: grid; grid-template-columns: 1fr; gap: 2rem; margin-bottom: 2rem;">
-                    <div>
-                        <img src="https://placehold.co/800x500/10b981/ffffff?text=Sistema+Ultrafiltrazione+Professionale" 
-                             alt="Sistema a Ultrafiltrazione" 
-                             style="width: 100%; border-radius: 1rem; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);">
+                <!-- Card 2: Uffici e Ristoranti -->
+                <div class="product-category-card" onclick="window.location.href='#uffici-ristoranti'">
+                    <div class="card-icon-background">
+                        <i class="fas fa-building"></i>
                     </div>
-                </div>
-                
-                <p style="font-size: 1.125rem; line-height: 1.8; color: #4b5563; margin-bottom: 1.5rem;">
-                    La soluzione ideale per <strong>uffici, aziende e attività commerciali</strong>. Il sistema a ultrafiltrazione 
-                    combina prestazioni elevate con bassi costi di gestione, garantendo acqua pura per grandi volumi 
-                    senza necessità di energia elettrica.
-                </p>
-                
-                <h4 style="font-size: 1.5rem; font-weight: 600; margin: 2rem 0 1rem; color: #1f2937;">Caratteristiche Tecniche</h4>
-                
-                <div class="product-specs">
-                    <div class="spec-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Membrana a fibra cava 0.01 micron</span>
+                    <div class="card-content">
+                        <h2 class="card-title">Impianti per Uffici e Ristoranti</h2>
+                        <p class="card-description">Soluzioni professionali per il tuo business</p>
+                        <div class="card-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
                     </div>
-                    <div class="spec-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Capacità fino a 500 litri/ora</span>
-                    </div>
-                    <div class="spec-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Funzionamento senza elettricità</span>
-                    </div>
-                    <div class="spec-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Sistema autopulente</span>
-                    </div>
-                    <div class="spec-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Manutenzione minima</span>
-                    </div>
-                    <div class="spec-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Installazione modulare scalabile</span>
-                    </div>
-                </div>
-                
-                <h4 style="font-size: 1.5rem; font-weight: 600; margin: 2rem 0 1rem; color: #1f2937;">Ideale per</h4>
-                <div style="display: grid; grid-template-columns: 1fr; gap: 1rem; margin-bottom: 2rem;">
-                    <div style="background: #f9fafb; padding: 1.5rem; border-radius: 0.75rem; border-left: 4px solid #10b981;">
-                        <strong style="color: #1f2937;">Uffici e Aziende</strong>
-                        <p style="color: #6b7280; margin-top: 0.5rem;">Acqua pura per tutti i dipendenti, riducendo i costi di gestione</p>
-                    </div>
-                    <div style="background: #f9fafb; padding: 1.5rem; border-radius: 0.75rem; border-left: 4px solid #10b981;">
-                        <strong style="color: #1f2937;">Ristoranti e Bar</strong>
-                        <p style="color: #6b7280; margin-top: 0.5rem;">Migliora il sapore di bevande e pietanze</p>
-                    </div>
-                    <div style="background: #f9fafb; padding: 1.5rem; border-radius: 0.75rem; border-left: 4px solid #10b981;">
-                        <strong style="color: #1f2937;">Palestre e Centri Sportivi</strong>
-                        <p style="color: #6b7280; margin-top: 0.5rem;">Acqua purificata sempre disponibile per gli atleti</p>
-                    </div>
-                </div>
-                
-                <div style="margin-top: 2rem;">
-                    <a href="contatti.html" class="btn btn-primary-green">Richiedi Informazioni</a>
-                </div>
-            </div>
-
-            <!-- ADDOLCITORI ACQUA -->
-            <div class="product-detail" id="addolcitori">
-                <h3><i class="fas fa-shower" style="color: #1e40af; margin-right: 10px;"></i>Addolcitori Acqua</h3>
-                
-                <div style="display: grid; grid-template-columns: 1fr; gap: 2rem; margin-bottom: 2rem;">
-                    <div>
-                        <img src="https://placehold.co/800x500/1e40af/ffffff?text=Addolcitore+Acqua+Green+Life" 
-                             alt="Addolcitore Acqua" 
-                             style="width: 100%; border-radius: 1rem; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);">
-                    </div>
-                </div>
-                
-                <p style="font-size: 1.125rem; line-height: 1.8; color: #4b5563; margin-bottom: 1.5rem;">
-                    L'addolcitore Green Life protegge la tua casa dal <strong>calcare</strong>, preservando 
-                    elettrodomestici, tubature e rubinetteria. Un investimento che si ripaga nel tempo 
-                    grazie al risparmio energetico e alla maggiore durata degli impianti.
-                </p>
-                
-                <h4 style="font-size: 1.5rem; font-weight: 600; margin: 2rem 0 1rem; color: #1f2937;">Caratteristiche Tecniche</h4>
-                
-                <div class="product-specs">
-                    <div class="spec-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Resina a scambio ionico di alta qualità</span>
-                    </div>
-                    <div class="spec-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Valvola elettronica programmabile</span>
-                    </div>
-                    <div class="spec-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Rigenerazione automatica notturna</span>
-                    </div>
-                    <div class="spec-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Capacità da 20 a 60 litri di resina</span>
-                    </div>
-                    <div class="spec-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Bypass integrato</span>
-                    </div>
-                    <div class="spec-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Consumo sale ridotto</span>
-                    </div>
-                </div>
-                
-                <h4 style="font-size: 1.5rem; font-weight: 600; margin: 2rem 0 1rem; color: #1f2937;">Benefici</h4>
-                <ul style="list-style: none; padding: 0;">
-                    <li style="padding: 0.75rem 0; border-bottom: 1px solid #f3f4f6;">
-                        <i class="fas fa-wrench" style="color: #1e40af; margin-right: 10px;"></i>
-                        <strong>Protegge gli Impianti:</strong> Evita depositi di calcare in tubature e caldaie
-                    </li>
-                    <li style="padding: 0.75rem 0; border-bottom: 1px solid #f3f4f6;">
-                        <i class="fas fa-bolt" style="color: #1e40af; margin-right: 10px;"></i>
-                        <strong>Risparmio Energetico:</strong> Fino al 30% in meno di consumi elettrici
-                    </li>
-                    <li style="padding: 0.75rem 0; border-bottom: 1px solid #f3f4f6;">
-                        <i class="fas fa-hand-sparkles" style="color: #1e40af; margin-right: 10px;"></i>
-                        <strong>Pelle e Capelli:</strong> Acqua più dolce per il benessere quotidiano
-                    </li>
-                    <li style="padding: 0.75rem 0;">
-                        <i class="fas fa-clock" style="color: #1e40af; margin-right: 10px;"></i>
-                        <strong>Durata Maggiore:</strong> Prolunga la vita di elettrodomestici e sanitari
-                    </li>
-                </ul>
-                
-                <div style="margin-top: 2rem;">
-                    <a href="contatti.html" class="btn btn-primary-green">Richiedi Informazioni</a>
                 </div>
             </div>
         </div>
     </section>
 
+    
     <!-- CALL TO ACTION -->
     <section class="cta-section">
         <div class="container">
@@ -321,6 +146,7 @@
                     <h4 class="footer-title">Link Rapidi</h4>
                     <ul class="footer-links">
                         <li><a href="index.html">Home</a></li>
+                        <li><a href="chi_siamo.html">Chi Siamo</a></li>
                         <li><a href="prodotti.html">Prodotti</a></li>
                         <li><a href="servizi.html">Servizi</a></li>
                         <li><a href="contatti.html">Contatti</a></li>
@@ -346,7 +172,7 @@
                 </div>
             </div>
             
-            <div class="footer-bottom">
+           <div class="footer-bottom">
                 <p>&copy; 2024 Green Life. Tutti i diritti riservati.</p>
                 <a href="#" class="privacy-link">Privacy Policy</a>
             </div>
