@@ -989,6 +989,56 @@ a.info-value:hover { color: var(--fuchsia); }
 .services-grid .reveal:nth-child(7) { transition-delay: 0.6s; }
 
 /* ============================================================
+   CONTACT BUTTONS (Chiama + WhatsApp)
+============================================================ */
+.info-card--tall { align-items: flex-start; }
+.info-card__body { display: flex; flex-direction: column; gap: 6px; }
+
+.contact-btns {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.contact-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 18px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-family: var(--font-body);
+  transition: var(--transition);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.contact-btn--call {
+  background: var(--gradient);
+  color: var(--white);
+  box-shadow: 0 4px 16px rgba(214,51,132,0.25);
+}
+
+.contact-btn--call:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(214,51,132,0.38);
+}
+
+.contact-btn--whatsapp {
+  background: #25D366;
+  color: var(--white);
+  box-shadow: 0 4px 16px rgba(37,211,102,0.28);
+}
+
+.contact-btn--whatsapp:hover {
+  background: #1ebe5d;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(37,211,102,0.4);
+}
+
+/* ============================================================
    RESPONSIVE
 ============================================================ */
 
@@ -1029,6 +1079,9 @@ a.info-value:hover { color: var(--fuchsia); }
 
   .hero-actions { flex-direction: column; align-items: center; }
   .btn-primary, .btn-ghost { width: 100%; justify-content: center; max-width: 320px; }
+
+  .contact-btns { flex-direction: column; }
+  .contact-btn { justify-content: center; }
 }
 
 @media (max-width: 480px) {

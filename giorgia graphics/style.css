@@ -156,6 +156,103 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+}
+
+/* Home Section con orsetti animati */
+#home {
+    overflow: hidden;
+}
+
+#home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/immagini/orsetto.webp');
+    background-size: 150px 150px;
+    background-repeat: repeat;
+    opacity: 0.08;
+    animation: rotateBackground 120s linear infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes rotateBackground {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Orsetti individuali sparsi */
+.bear-decoration {
+    position: absolute;
+    width: 180px;
+    height: 220px;
+    opacity: 1.0;
+    pointer-events: none;
+    z-index: 0;
+    animation: floatRotate 15s ease-in-out infinite;
+}
+
+.bear-1 {
+    top: 10%;
+    left: 5%;
+    animation-delay: 0s;
+}
+
+.bear-2 {
+    top: 20%;
+    right: 8%;
+    animation-delay: 2s;
+    width: 100px;
+    height: 100px;
+}
+
+.bear-3 {
+    bottom: 15%;
+    left: 10%;
+    animation-delay: 4s;
+    width: 140px;
+    height: 140px;
+}
+
+.bear-4 {
+    bottom: 25%;
+    right: 12%;
+    animation-delay: 6s;
+    width: 110px;
+    height: 110px;
+}
+
+.bear-5 {
+    top: 50%;
+    left: 3%;
+    animation-delay: 3s;
+    width: 90px;
+    height: 90px;
+}
+
+.bear-6 {
+    top: 60%;
+    right: 5%;
+    animation-delay: 5s;
+    width: 130px;
+    height: 130px;
+}
+
+@keyframes floatRotate {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-30px) rotate(180deg);
+    }
 }
 
 /* Home Section */
@@ -163,11 +260,13 @@ section {
     text-align: center;
     max-width: 1200px;
     width: 100%;
+    position: relative;
+    z-index: 1;
 }
 
 .home-content h1 {
     font-size: clamp(60px, 10vw, 120px);
-    letter-spacing: 12px;
+    letter-spacing: 15px;
     margin-bottom: 20px;
     text-transform: uppercase;
     animation: glitch 3s infinite;
@@ -220,6 +319,28 @@ section {
     gap: 50px;
     align-items: center;
     text-align: center;
+    position: relative;
+}
+
+.about-content::before {
+    position: absolute;
+    font-size: 200px;
+    opacity: 0.04;
+    top: 10%;
+    right: 5%;
+    pointer-events: none;
+}
+
+.about-content::after {
+    content: url("/immagini/orsorosabubble.webp");
+    position: absolute;
+    font-size: 180px;
+    opacity: 0.20;
+    bottom: 10%;
+    left: 1%;
+    animation-delay: 2s;
+    pointer-events: none;
+    animation: float 15s infinite ease-in-out;
 }
 
 .about-text {
@@ -234,7 +355,7 @@ section {
 }
 
 .about-text p {
-    font-size: 20px;
+    font-size: 18px;
     line-height: 1.8;
     margin-bottom: 20px;
     text-shadow: 0 2px 10px rgba(0,0,0,0.3);
@@ -258,8 +379,8 @@ section {
 }
 
 .about-image img {
-    width: 130%;
-    height: 140%;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     object-position: center;
 }
@@ -289,6 +410,29 @@ section {
 .projects-content {
     max-width: 1400px;
     width: 100%;
+    position: relative;
+}
+
+.projects-content::before {
+    content: '📱';
+    position: absolute;
+    font-size: 250px;
+    opacity: 0.03;
+    top: -50px;
+    right: -50px;
+    pointer-events: none;
+    animation: rotate 30s linear infinite;
+}
+
+.projects-content::after {
+   
+    position: absolute;
+    font-size: 200px;
+    opacity: 0.03;
+    bottom: -50px;
+    left: -50px;
+    pointer-events: none;
+    animation: rotate 25s linear infinite reverse;
 }
 
 .projects-content h2 {
@@ -298,8 +442,6 @@ section {
     text-align: center;
     text-transform: uppercase;
 }
-
-
 
 .projects-grid {
     display: grid;
@@ -331,6 +473,21 @@ section {
     transition: transform 0.5s;
 }
 
+.project-card::after {
+    content: '🎯';
+    position: absolute;
+    font-size: 120px;
+    opacity: 0.20;
+    bottom: -200px;
+    right: -60px;
+    pointer-events: none;
+}
+
+.project-card:nth-child(1)::after { content: url("/immagini/orsettonero.webp"); animation: float 15s infinite ease-in-out; }
+.project-card:nth-child(2)::after { content: url("/immagini/orsettorosso.webp"); animation: rotateBackground 60s linear infinite; }
+.project-card:nth-child(3)::after { content: url("/immagini/orsettoviola.webp"); animation: float 15s infinite ease-in-out;}
+.project-card:nth-child(4)::after { content: url("/immagini/orsorosabubble.webp"); animation: rotateBackground 60s linear infinite;}
+
 .project-card:hover::before {
     transform: scale(1);
 }
@@ -348,12 +505,10 @@ section {
 }
 
 .project-card p {
-    font-size: 18px;
-    margin-bottom: 15px;
-    letter-spacing: 3px;
+    font-size: 16px;
+    line-height: 1.6;
+    opacity: 0.9;
 }
-
-
 
 .project-tag {
     display: inline-block;
@@ -370,6 +525,175 @@ section {
     max-width: 800px;
     width: 100%;
     text-align: center;
+}
+
+/* Info Sections - Nuove sezioni tra Progetti e Contatti */
+.info-section {
+    max-width: 1200px;
+    width: 100%;
+    padding: 80px 20px;
+    position: relative;
+}
+
+#dubbi .info-section::before {
+    
+    position: absolute;
+    font-size: 200px;
+    opacity: 0.04;
+    top: 50px;
+    left: -30px;
+    pointer-events: none;
+}
+
+.info-card-single {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(15px);
+    border: 2px solid rgba(255,255,255,0.2);
+    border-radius: 30px;
+    padding: 50px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+.info-card-single::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255,20,147,0.1), rgba(185,103,255,0.1));
+    opacity: 0;
+    transition: opacity 0.4s;
+    pointer-events: none;
+}
+
+.info-card-single:hover::before {
+    opacity: 1;
+}
+
+.info-card-single::after {
+    position: absolute;
+    font-size: 80px;
+    opacity: 0.06;
+    top: 20px;
+    right: 20px;
+    pointer-events: none;
+}
+
+#dubbi .info-card-single::after { content: '💭'; }
+
+.info-card-single:hover {
+    transform: translateY(-10px);
+    border-color: rgba(255,255,255,0.5);
+    box-shadow: 
+        0 20px 60px rgba(255,20,147,0.4),
+        0 0 40px rgba(185,103,255,0.3);
+}
+
+.info-card-image-single {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 10%;
+    position: relative;
+}
+
+.info-card-image-single img {
+    width: 75%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+    border-radius: 20%;
+}
+
+.info-card-single:hover .info-card-image-single img {
+    transform: scale(1.1);
+}
+
+.info-card-text {
+    padding: 20px;
+    position: relative;
+}
+
+
+#filosofia .info-card-image-single img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+    border-radius: 20%;
+}
+
+#consulenza .info-card-image-single img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+    border-radius: 20%;
+    
+}
+
+
+
+
+
+.info-card-text p {
+    font-size: 18px;
+    line-height: 1.9;
+    margin-bottom: 20px;
+    color: rgba(255,255,255,0.95);
+    text-align: left;
+    position: relative;
+    z-index: 1;
+}
+
+.info-card-text p:last-child {
+    margin-bottom: 0;
+}
+
+/* Alternare layout immagine sx/dx */
+#filosofia .info-card-single {
+    grid-template-columns: 1fr 1fr;
+}
+
+#filosofia .info-card-image-single {
+    order: 2;
+}
+
+#filosofia .info-card-text {
+    order: 1;
+}
+
+/* Sezione Dubbi - Stile speciale */
+#dubbi .info-card-text p {
+    font-size: 28px;
+    font-weight: 300;
+    letter-spacing: 3px;
+    text-align: center;
+    color: white;
+    text-shadow: 0 2px 20px rgba(255,20,147,0.5);
+}
+
+/* Animazioni */
+.info-section {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .contact-content h2 {
@@ -393,6 +717,18 @@ section {
     border-radius: 20px;
     box-shadow: 0 20px 60px rgba(255,20,147,0.3);
     width: 100%;
+    position: relative;
+}
+
+.contact-form::before {
+    content: url("/immagini/orsorosabubble.webp"); 
+    position: absolute;
+    font-size: 100px;
+    opacity: 0.25;
+    top: -60px;
+    right: 0px;
+    pointer-events: none;
+    animation: float 15s infinite ease-in-out;
 }
 
 .form-group {
@@ -468,6 +804,7 @@ section {
     gap: 30px;
     justify-content: center;
     flex-wrap: wrap;
+    align-items: center;
 }
 
 .social-link {
@@ -476,18 +813,22 @@ section {
     gap: 10px;
     color: white;
     text-decoration: none;
-    padding: 15px 30px;
-    background: rgba(255,255,255,0.1);
-    border: 2px solid rgba(255,255,255,0.3);
-    border-radius: 50px;
+    padding: 0;
+    background: transparent;
+    border: none;
     transition: all 0.3s;
-    letter-spacing: 2px;
 }
 
-.social-link:hover {
-    background: rgba(255,255,255,0.2);
-    transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(255,20,147,0.4);
+.social-link img {
+    width: 80px;
+    height: 80px;
+    transition: transform 0.3s;
+    filter: drop-shadow(0 0 10px rgba(255,20,147,0.5));
+}
+
+.social-link:hover img {
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 20px rgba(255,20,147,0.8));
 }
 
 .success-message {
@@ -539,39 +880,36 @@ section {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
 }
+
 /* Footer */
 footer {
-  
     position: relative;
-    top: 0;
     width: 100%;
-    padding: 20px 50px;
+    padding: 50px;
+    background: rgba(0,0,0,0.3);
+    backdrop-filter: blur(15px);
+    border-top: 2px solid rgba(255,255,255,0.3);
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
-    z-index: 1000;
-    background: rgba(255,255,255,0.1);
-    backdrop-filter: blur(10px);
-    border-bottom: 2px solid rgba(255,255,255,0.2);
+    min-height: 120px;
 }
 
 .footer-signature {
-    font-size: 24px;
+    font-size: 36px;
     font-weight: 300;
-    letter-spacing: 4px;
+    letter-spacing: 12px;
     color: white;
-    font-family: 'Raleway', sans-serif;
     text-shadow: 
         0 0 20px rgba(255,20,147,0.6),
         0 0 40px rgba(185,103,255,0.4);
     font-style: italic;
     position: relative;
-    padding: 10px 20px;
-    border: 1px solid rgba(255,255,255,0.3);
+    padding: 15px 40px;
+    border: 2px solid rgba(255,255,255,0.4);
     border-radius: 50px;
-    background: rgba(255,255,255,0.05);
+    background: rgba(255,255,255,0.08);
     transition: all 0.3s ease;
-    animation: float 8s ease-in-out infinite;
 }
 
 .footer-signature::before {
@@ -593,12 +931,12 @@ footer {
 }
 
 .footer-signature:hover {
-    transform: translateY(-3px);
+    transform: translateY(-5px);
     text-shadow: 
         0 0 30px rgba(255,20,147,0.8),
         0 0 60px rgba(185,103,255,0.6);
+    box-shadow: 0 10px 40px rgba(255,20,147,0.4);
 }
-
 
 /* ==================== RESPONSIVE MOBILE ==================== */
 
@@ -693,17 +1031,15 @@ footer {
     }
     
     .about-text p {
-        font-size: 20px;
+        font-size: 16px;
         line-height: 1.7;
         padding: 0;
         text-align: center;
     }
-
-    
     
     .about-image {
         width: 280px;
-        height: 280px;
+        height: 320px;
         margin: 20px auto;
     }
     
@@ -734,19 +1070,55 @@ footer {
         letter-spacing: 2px;
         margin-bottom: 12px;
     }
-    
+
     .project-card p {
-    font-size: 18px;
-    /*margin-bottom: 15px;*/
-    letter-spacing: 3px;
+        font-size: 15px;
+        line-height: 1.6;
     }
-    
     
     /* CONTACT SECTION - FIX FORM CENTRATA */
     .contact-content {
         width: 100%;
         max-width: 100%;
         padding: 0 10px;
+    }
+
+    /* INFO SECTIONS MOBILE */
+    .info-section {
+        padding: 60px 15px;
+    }
+
+    .info-card-single {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 30px 25px;
+    }
+
+    #filosofia .info-card-image-single {
+        order: 1;
+    }
+
+    #filosofia .info-card-text {
+        order: 2;
+    }
+
+    .info-card-image-single {
+        height: 250px;
+    }
+
+    .info-card-text {
+        padding: 10px;
+    }
+
+    .info-card-text p {
+        font-size: 16px;
+        line-height: 1.7;
+        margin-bottom: 15px;
+    }
+
+    #dubbi .info-card-text p {
+        font-size: 22px;
+        letter-spacing: 2px;
     }
 
     .contact-content h2 {
@@ -805,14 +1177,9 @@ footer {
         justify-content: center;
     }
     
-    .social-link {
-        padding: 12px 25px;
-        font-size: 14px;
-    }
-
-    .social-links img {
-        max-width: 150px;
-        height: auto;
+    .social-link img {
+        width: 70px;
+        height: 70px;
     }
     
     /* ELEMENTI DECORATIVI - Nascondi su mobile */
@@ -827,15 +1194,7 @@ footer {
         height: 250px;
     }
 
-    /* TOUCH FEEDBACK */
-    .cta-button:active, 
-    .submit-button:active, 
-    .social-link:active,
-    .project-card:active {
-        transform: scale(0.98);
-    }
-
-     /* FOOTER MOBILE */
+    /* FOOTER MOBILE */
     footer {
         padding: 30px 20px;
         justify-content: center;
@@ -846,13 +1205,21 @@ footer {
         letter-spacing: 6px;
         padding: 8px 16px;
     }
+
+    /* TOUCH FEEDBACK */
+    .cta-button:active, 
+    .submit-button:active, 
+    .social-link:active,
+    .project-card:active {
+        transform: scale(0.98);
+    }
 }
 
 /* iPhone SE e schermi molto piccoli */
 @media (max-width: 375px) {
     .home-content h1 {
         font-size: 40px !important;
-        letter-spacing: 4px !important;
+        letter-spacing: 2px !important;
     }
     
     .subtitle {
