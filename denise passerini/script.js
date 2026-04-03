@@ -126,13 +126,16 @@ window.addEventListener('scroll', animateCounters, { passive: true });
 /* ============================================================
    6. FORM – validazione e invio simulato
 ============================================================ */
-/* ============================================================
-   6. FORM – Invio con Formspree (AJAX)
-============================================================ */
-const form = document.getElementById('contact-form');
+const form        = document.getElementById('contact-form');
 const formSuccess = document.getElementById('form-success');
-const btnText = document.getElementById('btn-text');
+const btnText     = document.getElementById('btn-text');
 
+/**
+ * Valida un singolo campo.
+ * @param {HTMLElement} field - Input o textarea
+ * @param {HTMLElement} errEl  - Elemento per il messaggio di errore
+ * @returns {boolean}
+ */
 function validateField(field, errEl) {
   const value = field.value.trim();
   let message = '';
@@ -160,75 +163,62 @@ function validateField(field, errEl) {
 ['name', 'email', 'message'].forEach(id => {
   const field = document.getElementById(id);
   const errEl = document.getElementById(`err-${id}`);
-  if (field && errEl) {
-    field.addEventListener('input', () => {
-      if (field.value.trim()) {
-        field.classList.remove('error');
-        errEl.classList.remove('show');
-      }
-    });
-  }
+  field.addEventListener('input', () => {
+    if (field.value.trim()) {
+      field.classList.remove('error');
+      errEl.classList.remove('show');
+    }
+  });
 });
-
-form.addEventListener('submit', async (e) => {
+form.addEventListener('submit', function(e) {
+    // Il form viene inviato normalmente tramite FormSubmit
+    // Mostra il messaggio di successo dopo l'invio
+    formSuccess.style.display = 'block';
+    
+    // Nascondi il messaggio dopo 5 secondi
+    setTimeout(() => {
+        formSuccess.style.display = 'none';
+    }, 5000);
+});
+/*
+form.addEventListener('submit', (e) => {
   e.preventDefault();
 
-  const nameField = document.getElementById('name');
-  const emailField = document.getElementById('email');
+  const nameField    = document.getElementById('name');
+  const emailField   = document.getElementById('email');
   const messageField = document.getElementById('message');
 
-  const nameValid = validateField(nameField, document.getElementById('err-name'));
-  const emailValid = validateField(emailField, document.getElementById('err-email'));
+  const nameValid    = validateField(nameField,    document.getElementById('err-name'));
+  const emailValid   = validateField(emailField,   document.getElementById('err-email'));
   const messageValid = validateField(messageField, document.getElementById('err-message'));
 
   if (!nameValid || !emailValid || !messageValid) return;
 
-  // Disabilita il bottone durante l'invio
+  // Stato di caricamento
   const submitBtn = form.querySelector('button[type="submit"]');
   submitBtn.disabled = true;
   btnText.textContent = 'Invio in corso…';
 
-  try {
-    const formData = new FormData(form);
-    
-    const response = await fetch(form.action, {
-      method: 'POST',
-      body: formData,
-      headers: {
-        'Accept': 'application/json'  // Importante per Formspree
-      }
-    });
+  // Simula chiamata API (1.5s)
+  setTimeout(() => {
+    form.style.display        = 'none';
+    formSuccess.classList.add('show');
 
-    if (response.ok) {
-      // Successo!
-      form.style.display = 'none';
-      formSuccess.classList.add('show');
-      
-      // Reset dopo 6 secondi
-      setTimeout(() => {
-        form.reset();
-        form.style.display = '';
-        submitBtn.disabled = false;
-        btnText.textContent = 'Invia richiesta';
-        formSuccess.classList.remove('show');
-      }, 6000);
-    } else {
-      const data = await response.json();
-      let errorMsg = "Oops! C'è stato un problema.";
-      if (data && data.errors) {
-        errorMsg = data.errors.map(err => err.message).join(", ");
-      }
-      alert(errorMsg);
-      submitBtn.disabled = false;
+    // Animazione entrata icona
+    formSuccess.querySelector('svg').style.animation =
+      'fadeUp 0.6s cubic-bezier(0.4,0,0.2,1) forwards';
+
+    // Reset dopo 6s (opzionale)
+    setTimeout(() => {
+      form.reset();
+      form.style.display  = '';
+      submitBtn.disabled  = false;
       btnText.textContent = 'Invia richiesta';
-    }
-  } catch (error) {
-    console.error('Errore:', error);
-    alert("Errore di connessione. Riprova più tardi.");
-    submitBtn.disabled = false;
-    btnText.textContent = 'Invia richiesta';
-  }
+      formSuccess.classList.remove('show');
+    }, 6000);
+  }, 1500);
 });
+*/
 
 /* ============================================================
    7. SCROLL-TO-TOP BUTTON
