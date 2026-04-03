@@ -254,3 +254,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 ============================================================ */
 onScroll();           // navbar state iniziale
 animateCounters();    // per desktop con finestra alta
+
+
+

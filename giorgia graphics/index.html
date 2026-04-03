@@ -11,6 +11,8 @@
 <body>
     <div class="animated-bg"></div>
     <div class="grid-overlay"></div>
+       <!-- Container per elementi dinamici -->
+    <div id="dynamic-elements"></div>
 
     <nav>
         <div class="logo">GS</div>
@@ -70,7 +72,7 @@
                     <br>Supporto costante e personalizzato.</p>
                 </div>
                 <div class="about-image">
-                    <img src="/immagini/fotoottobre.webp" alt="Giorgia Scomparin">      
+                    <img src="/immagini/fotoottobre.webp" alt="Giorgia Scomparin" loading="lazy">
                 </div>
             </div>
         </section>
@@ -183,5 +185,14 @@
     </footer>
 
     <script src="script.js"></script>
+    <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-FXC0KLH9H4"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-FXC0KLH9H4');
+        </script>
 </body>
 </html>
