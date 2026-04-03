@@ -246,6 +246,10 @@ section {
     height: 130px;
 }
 
+
+
+
+
 @keyframes floatRotate {
     0%, 100% {
         transform: translateY(0) rotate(0deg);
@@ -384,6 +388,8 @@ section {
     object-fit: cover;
     object-position: center;
 }
+
+
 
 @keyframes pulse {
     0%, 100% { transform: scale(1); }
@@ -657,7 +663,7 @@ section {
     margin-bottom: 0;
 }
 
-/* Alternare layout immagine sx/dx */
+/* Alternare layout immagine sx/dx 
 #filosofia .info-card-single {
     grid-template-columns: 1fr 1fr;
 }
@@ -668,7 +674,7 @@ section {
 
 #filosofia .info-card-text {
     order: 1;
-}
+}  */
 
 /* Sezione Dubbi - Stile speciale */
 #dubbi .info-card-text p {
@@ -910,6 +916,7 @@ footer {
     border-radius: 50px;
     background: rgba(255,255,255,0.08);
     transition: all 0.3s ease;
+    animation: float 15s infinite ease-in-out;
 }
 
 .footer-signature::before {
@@ -924,6 +931,7 @@ footer {
     z-index: -1;
     opacity: 0;
     transition: opacity 0.3s;
+    animation: float 15s infinite ease-in-out;
 }
 
 .footer-signature:hover::before {

@@ -1,6 +1,6 @@
 /* ============================================================
    PRO CLEAN – style.css
-   Autore: Pro Clean Web
+   Autore: @rc.dev
    Colori: Fucsia #d63384 | Arancione #ff7a00 | Bianco | Grigio
 ============================================================ */
 
@@ -35,6 +35,7 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  overflow-x: hidden;
 }
 
 body {
@@ -1038,6 +1039,35 @@ a.info-value:hover { color: var(--fuchsia); }
   box-shadow: 0 8px 24px rgba(37,211,102,0.4);
 }
 
+
+/* ============================================================
+   FOOTER RC ANIMATO
+============================================================ */
+.footer-rc {
+  /*font-family: var(--font-display);*/
+  font-family: 'Raleway', sans-serif;
+  font-style: italic;
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 1;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  opacity: 0.12;
+  user-select: none;
+  animation: rcFloat 6s ease-in-out infinite;
+  display: block;
+  margin-top: 8px;
+}
+
+@keyframes rcFloat {
+  0%, 100% { transform: translateY(0) rotate(-2deg); opacity: 0.12; }
+  25%       { transform: translateY(-12px) rotate(1deg); opacity: 0.18; }
+  50%       { transform: translateY(-6px) rotate(-1deg); opacity: 0.15; }
+  75%       { transform: translateY(-16px) rotate(2deg); opacity: 0.2; }
+}
+
 /* ============================================================
    RESPONSIVE
 ============================================================ */
@@ -1057,24 +1087,34 @@ a.info-value:hover { color: var(--fuchsia); }
   .nav-menu, .btn-nav { display: none; }
   .hamburger { display: flex; }
 
-  .hero { padding: 110px 24px 60px; }
+  .hero { padding: 110px 16px 60px; }
   .hero-badge { display: none; }
   .br-desktop { display: none; }
 
   .services-grid { grid-template-columns: 1fr; gap: 20px; }
 
-  .about-img-wrap { width: 220px; height: 220px; }
-  .about-logo { width: 180px; height: 180px; }
-  .about-ring.r1 { width: 210px; height: 210px; }
-  .about-ring.r2 { width: 235px; height: 235px; }
+  /* About – contenitore non sfora lo schermo */
+  .about-visual { width: 100%; overflow: hidden; }
+  .about-img-wrap { width: 200px; height: 200px; margin: 0 auto; }
+  .about-logo { width: 170px; height: 170px; }
+  .about-ring.r1 { width: 190px; height: 190px; }
+  .about-ring.r2 { width: 210px; height: 210px; }
 
-  .contact-form-wrap { padding: 32px 24px; }
-
-  .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 36px;
+  /* Stats – larghezza fluida */
+  .about-stats {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 20px 16px;
+    gap: 16px;
   }
 
+  /* Contacts */
+  .contact-form-wrap { padding: 28px 16px; }
+  .contacts-grid { gap: 24px; }
+  .info-card { padding: 18px 16px; gap: 14px; }
+
+  .footer-grid { grid-template-columns: 1fr; gap: 36px; }
   .scroll-top { bottom: 20px; right: 20px; }
 
   .hero-actions { flex-direction: column; align-items: center; }
@@ -1089,4 +1129,6 @@ a.info-value:hover { color: var(--fuchsia); }
   .hero-title { font-size: 2rem; }
   .nav-container { padding: 12px 16px; }
   .container { padding: 0 16px; }
+  .service-card { padding: 24px 20px; }
+  .section-header { padding: 0 8px; }
 }
