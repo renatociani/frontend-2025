@@ -278,3 +278,255 @@ window.addEventListener('resize', () => {
         document.querySelectorAll('.bubble, .floating-icon').forEach(el => el.remove());
     }
 });
+
+// ==================== NUOVE FUNZIONALITÀ ====================
+
+// 1. CONTATORE NUMERICO (30+ clienti)
+function startCounter() {
+    const counterElement = document.querySelector('.counter');
+    if (!counterElement) return;
+    
+    const target = parseInt(counterElement.getAttribute('data-target'));
+    let current = 0;
+    const increment = target / 50;
+    const duration = 2000;
+    const stepTime = duration / 50;
+    
+    const updateCounter = () => {
+        current += increment;
+        if (current >= target) {
+            counterElement.textContent = target;
+            return;
+        }
+        counterElement.textContent = Math.floor(current);
+        setTimeout(updateCounter, stepTime);
+    };
+    
+    // Osserva quando la sezione diventa visibile
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && counterElement.textContent === '0') {
+                updateCounter();
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    observer.observe(counterElement);
+}
+
+// 2. CARICAMENTO RECENSIONI
+const reviewImages = [
+    '/immagini/recensioni/recensione1.png',
+    '/immagini/recensioni/recensione2.png',
+    '/immagini/recensioni/recensione3.png',
+    '/immagini/recensioni/recensione4.png',
+    '/immagini/recensioni/recensione5.png',
+    '/immagini/recensioni/recensione6.png',
+    '/immagini/recensioni/recensione7.png',
+    '/immagini/recensioni/recensione8.png',
+    '/immagini/recensioni/recensione9.png',
+    '/immagini/recensioni/recensione10.png'
+];
+
+function loadReviews() {
+    const scrollTrack = document.getElementById('scrollTrack');
+    if (!scrollTrack) return;
+    
+    reviewImages.forEach((imgSrc, index) => {
+        const reviewCard = document.createElement('div');
+        reviewCard.classList.add('review-card');
+        
+        const img = document.createElement('img');
+        img.src = imgSrc;
+        img.alt = `Recensione cliente ${index + 1}`;
+        img.loading = 'lazy';
+        
+        // Se l'immagine non esiste, mostra un placeholder
+        img.onerror = function() {
+            this.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="280" height="400" viewBox="0 0 280 400"%3E%3Crect width="280" height="400" fill="%23rgba(255,255,255,0.1)" rx="15"/%3E%3Ctext x="140" y="200" text-anchor="middle" fill="white" font-size="14"%3ERecensione %23' + (index + 1) + '%3C/text%3E%3C/svg%3E';
+        };
+        
+        reviewCard.appendChild(img);
+        scrollTrack.appendChild(reviewCard);
+    });
+}
+
+// 3. SCROLL ORIZZONTALE RECENSIONI
+function initScrollControls() {
+    const scrollContainer = document.getElementById('scrollContainer');
+    const scrollLeft = document.getElementById('scrollLeft');
+    const scrollRight = document.getElementById('scrollRight');
+    
+    if (!scrollContainer || !scrollLeft || !scrollRight) return;
+    
+    const scrollAmount = 350;
+    
+    scrollLeft.addEventListener('click', () => {
+        scrollContainer.scrollBy({
+            left: -scrollAmount,
+            behavior: 'smooth'
+        });
+    });
+    
+    scrollRight.addEventListener('click', () => {
+        scrollContainer.scrollBy({
+            left: scrollAmount,
+            behavior: 'smooth'
+        });
+    });
+    
+    // Scroll con drag su mobile
+    let isDown = false;
+    let startX;
+    let scrollLeftPos;
+    
+    scrollContainer.addEventListener('mousedown', (e) => {
+        isDown = true;
+        startX = e.pageX - scrollContainer.offsetLeft;
+        scrollLeftPos = scrollContainer.scrollLeft;
+    });
+    
+    scrollContainer.addEventListener('mouseleave', () => {
+        isDown = false;
+    });
+    
+    scrollContainer.addEventListener('mouseup', () => {
+        isDown = false;
+    });
+    
+    scrollContainer.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - scrollContainer.offsetLeft;
+        const walk = (x - startX) * 2;
+        scrollContainer.scrollLeft = scrollLeftPos - walk;
+    });
+    
+    // Touch per mobile
+    scrollContainer.addEventListener('touchstart', (e) => {
+        isDown = true;
+        startX = e.touches[0].pageX - scrollContainer.offsetLeft;
+        scrollLeftPos = scrollContainer.scrollLeft;
+    });
+    
+    scrollContainer.addEventListener('touchmove', (e) => {
+        if (!isDown) return;
+        const x = e.touches[0].pageX - scrollContainer.offsetLeft;
+        const walk = (x - startX) * 2;
+        scrollContainer.scrollLeft = scrollLeftPos - walk;
+    });
+    
+    scrollContainer.addEventListener('touchend', () => {
+        isDown = false;
+    });
+}
+
+// 4. EFFETTO NEON DINAMICO SU TUTTI I TESTI
+function addDynamicNeon() {
+    const allHeadings = document.querySelectorAll('h1, h2, h3, .subtitle, .logo');
+    
+    allHeadings.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            el.style.transition = 'text-shadow 0.3s';
+            el.style.textShadow = '0 0 20px #FF1493, 0 0 40px #FF1493, 0 0 80px #B967FF';
+        });
+        
+        el.addEventListener('mouseleave', () => {
+            setTimeout(() => {
+                el.style.textShadow = '';
+            }, 300);
+        });
+    });
+}
+
+// 5. AGGIUNGI PARTICOLINE NEON SOTTO I TITOLI
+function addNeonUnderline() {
+    const headings = document.querySelectorAll('h2');
+    
+    headings.forEach(h2 => {
+        const underline = document.createElement('div');
+        underline.style.width = '0%';
+        underline.style.height = '3px';
+        underline.style.background = 'linear-gradient(90deg, #FF1493, #B967FF, #FF1493)';
+        underline.style.margin = '10px auto 0';
+        underline.style.borderRadius = '3px';
+        underline.style.transition = 'width 0.8s ease';
+        underline.style.boxShadow = '0 0 15px #FF1493';
+        
+        h2.style.position = 'relative';
+        h2.style.display = 'inline-block';
+        h2.style.width = '100%';
+        h2.style.textAlign = 'center';
+        h2.parentElement.style.textAlign = 'center';
+        h2.insertAdjacentElement('afterend', underline);
+        
+        // Anima l'underline quando entra in vista
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    underline.style.width = '80%';
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        observer.observe(h2);
+    });
+}
+
+// 6. EFFETTO PARTICELLE ATTORNO AL MOUSE (neon)
+function createNeonParticles() {
+    if (isMobile) return;
+    
+    document.addEventListener('mousemove', (e) => {
+        if (Math.random() > 0.95) {
+            const particle = document.createElement('div');
+            particle.style.position = 'fixed';
+            particle.style.width = '4px';
+            particle.style.height = '4px';
+            particle.style.backgroundColor = '#FF1493';
+            particle.style.borderRadius = '50%';
+            particle.style.left = e.clientX + 'px';
+            particle.style.top = e.clientY + 'px';
+            particle.style.pointerEvents = 'none';
+            particle.style.zIndex = '9999';
+            particle.style.boxShadow = '0 0 10px #FF1493';
+            particle.style.animation = 'fadeOut 1s forwards';
+            
+            document.body.appendChild(particle);
+            
+            setTimeout(() => {
+                particle.remove();
+            }, 1000);
+        }
+    });
+}
+
+// Aggiungi l'animazione fadeOut se non esiste
+if (!document.querySelector('#fadeOutKeyframes')) {
+    const style = document.createElement('style');
+    style.id = 'fadeOutKeyframes';
+    style.textContent = `
+        @keyframes fadeOut {
+            0% { opacity: 1; transform: scale(1); }
+            100% { opacity: 0; transform: scale(2); }
+        }
+    `;
+    document.head.appendChild(style);
+}
+
+// 7. AVVIA TUTTE LE NUOVE FUNZIONI
+document.addEventListener('DOMContentLoaded', () => {
+    startCounter();
+    loadReviews();
+    initScrollControls();
+    addDynamicNeon();
+    addNeonUnderline();
+    createNeonParticles();
+});
+
+// 8. AGGIUNGI CLASSE PER DISPOSITIVI MOBILE
+const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+if (isMobileDevice) {
+    document.body.classList.add('is-mobile');
+}
