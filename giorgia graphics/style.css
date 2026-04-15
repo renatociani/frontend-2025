@@ -4,12 +4,19 @@
     box-sizing: border-box;
 }
 
-:root {
+/*:root {
     --pink: #FF1493;
     --light-pink: #FFB6D9;
     --purple: #B967FF;
     --dark-purple: #7209B7;
     --bg: linear-gradient(135deg, #FF1493 0%, #B967FF 50%, #7209B7 100%);
+}*/
+:root {
+    --pink: #d675a9;
+    --light-pink: #FFB6D9;
+    --purple: #db7bc3;
+    --dark-purple: #cf51ab;
+    --bg: linear-gradient(135deg, #d675a9 0%, #FFB6D9 50%, #db7bc3 100%);
 }
 
 body {
@@ -28,6 +35,7 @@ body {
     height: 100%;
     z-index: -1;
     background: linear-gradient(135deg, #FF1493 0%, #B967FF 50%, #7209B7 100%);
+    /*background:linear-gradient(135deg, #b45186 0%, #B967FF 50%,#b7849d 50%,);*/
 }
 
 .animated-bg::before {

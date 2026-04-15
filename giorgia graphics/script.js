@@ -105,6 +105,8 @@ if (window.innerWidth > 768) {
 const floatingIcons = [
     { src: '/immagini/pc.webp', name: 'pc' },
     { src: '/immagini/orsetto3ottobre.webp', name: 'orsetto' }
+    /*{ src: '/immagini/gomma.webp', name: 'gomma' }*/
+    
 ];
 
 function createFloatingIcon() {
@@ -261,6 +263,7 @@ const imagesToPreload = [
     '/immagini/pc.webp',
     '/immagini/orsetto3ottobre.webp',
     '/immagini/orsetto.webp'
+    /*'/immagini/gomma.webp'*/
 ];
 
 imagesToPreload.forEach(imgSrc => {
