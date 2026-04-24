@@ -1765,3 +1765,195 @@ h1, h2, h3, .logo, .footer-signature {
 }
 
 
+
+/* ==================== STYLE CARD DINAMICA ==================== */
+
+.style-card {
+    position: relative;
+    width: 280px;
+    margin: 30px auto;
+    cursor: pointer;
+    perspective: 1000px;
+}
+
+.style-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transform-style: preserve-3d;
+}
+
+.style-card:hover .style-card-inner {
+    transform: rotateY(10deg) rotateX(5deg);
+}
+
+.style-card-front {
+    position: relative;
+    width: 100%;
+    background: linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,182,217,0.1));
+    backdrop-filter: blur(12px);
+    border-radius: 25px;
+    padding: 20px;
+    border: 2px solid rgba(255,255,255,0.4);
+    box-shadow: 
+        0 15px 35px rgba(255,20,147,0.3),
+        0 0 30px rgba(185,103,255,0.2);
+    transition: all 0.4s ease;
+    overflow: hidden;
+}
+
+.style-card-front::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    animation: rotate 20s linear infinite;
+    pointer-events: none;
+}
+
+.style-card-front::after {
+    content: '🌸';
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    font-size: 40px;
+    opacity: 0.3;
+    pointer-events: none;
+    animation: float 6s ease-in-out infinite;
+}
+
+.style-card:hover .style-card-front {
+    transform: translateY(-10px);
+    border-color: rgba(255,255,255,0.7);
+    box-shadow: 
+        0 25px 50px rgba(255,20,147,0.5),
+        0 0 40px rgba(185,103,255,0.4);
+}
+
+.changing-style-img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    transition: all 0.5s ease;
+    filter: drop-shadow(0 5px 15px rgba(255,20,147,0.3));
+}
+
+.style-card:hover .changing-style-img {
+    transform: scale(1.02);
+    filter: drop-shadow(0 10px 25px rgba(255,20,147,0.5));
+}
+
+.style-card-overlay {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 10px;
+    background: linear-gradient(90deg, transparent, rgba(255,20,147,0.6), transparent);
+    backdrop-filter: blur(5px);
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+}
+
+.style-card:hover .style-card-overlay {
+    transform: translateY(0);
+}
+
+.style-card-overlay span {
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: white;
+    font-weight: bold;
+}
+
+/* Pallini indicatori */
+.style-card-dots {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.4);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.dot.active {
+    width: 25px;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #FF1493, #B967FF);
+    box-shadow: 0 0 10px #FF1493;
+}
+
+.dot:hover {
+    background: #FF1493;
+    transform: scale(1.2);
+}
+
+/* Animazione fade per cambio immagine */
+@keyframes imageFade {
+    0% {
+        opacity: 0.7;
+        transform: scale(0.98);
+    }
+    50% {
+        opacity: 0.9;
+        transform: scale(1.01);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.image-changing {
+    animation: imageFade 0.6s ease-out;
+}
+
+/* Responsive per la style card */
+@media (max-width: 768px) {
+    .style-card {
+        width: 240px;
+        margin: 20px auto;
+    }
+    
+    .style-card-overlay span {
+        font-size: 11px;
+    }
+    
+    .style-card-front {
+        padding: 15px;
+    }
+    
+    .style-card-dots {
+        gap: 8px;
+        margin-top: 15px;
+    }
+    
+    .dot.active {
+        width: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .style-card {
+        width: 200px;
+    }
+    
+    .style-card-front::after {
+        font-size: 30px;
+    }
+}
+
+

@@ -243,7 +243,7 @@ section {
 
 .rectangle-image {
     width: 100%;
-    height: 100%;
+    height: 130%;
     object-fit: cover;
     transition: transform 0.5s ease;
 }
@@ -275,6 +275,34 @@ section {
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
+}
+
+.about-card {
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto 3rem;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 50px rgba(21, 101, 192, 0.2);
+    border: 3px solid #e3f2fd;
+    background: #ffffff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 60px rgba(21, 101, 192, 0.3);
+}
+
+.about-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.about-card:hover .about-image {
+    transform: scale(1.05);
 }
 
 .about-content p {
