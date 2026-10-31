@@ -1,6 +1,12 @@
 // ============================================
 // GIORGIA GRAPHICS — SCRIPT MODERNO E LEGGERO
 // ============================================
+/**Nel file ho aggiunto il controllo che salva nello storage del browser il flag di iscrizione:
+
+localStorage.setItem('newsletter_subscribed', 'true')
+e al caricamento verifica:
+if (localStorage.getItem('newsletter_subscribed') === 'true')
+Quindi il popup non viene più mostrato sullo stesso dispositivo/browse */
 
 // --- NEWSLETTER POPUP ---
 document.addEventListener('DOMContentLoaded', function() {
