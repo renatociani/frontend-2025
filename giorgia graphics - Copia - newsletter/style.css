@@ -1127,11 +1127,22 @@ footer {
     align-items: center;
 }
 
+.footer-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
 .footer-logo {
     font-family: var(--font-serif);
     font-size: 24px;
     letter-spacing: 4px;
     color: var(--pink-dark);
+}
+
+.footer-tax-id {
+    font-size: 13px;
+    color: var(--gray-600);
 }
 
 .footer-signature {
